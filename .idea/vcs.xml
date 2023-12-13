@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FaceRecognization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/btlLTM" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/btlXLA-anti-spoofing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/btl_httmFaceRecognization" vcs="Git" />
+  </component>
+</project>

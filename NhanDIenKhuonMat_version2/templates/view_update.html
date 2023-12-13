@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update student</title>
+    {% include "styles.html" %}
+    <style>
+        th, td {
+            padding: 2px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+    <h2>Update {{ student.msv }}</h2>
+    <form method="post">
+        <table>
+            <tr>
+                <td><span>Họ và tên:</span></td>
+                <td><input type="text" name="fullname" value="{{ student.fullname }}" required></td>
+            </tr>
+            <tr>
+                <td><span>Mã sinh viên:</span></td>
+                <td><input type="text" name="msv" value="{{ student.msv }}" required></td>
+            </tr>
+        </table>
+        {% if error %}
+            <span>{{error}}</span>
+        {% endif %}
+        <table>
+            <tr>
+                <td><input type="submit" id="bt" name="action" value="Xác nhận"></td>
+                <td><a href="/"><button>Hủy</button></a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

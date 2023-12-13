@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+    {% include "styles.html" %}
+    <style>
+        table, th, td {
+            border: 2px solid black;
+        }
+
+        table {
+            background-color: white;
+        }
+
+        th, td {
+            padding: 2px;
+            font-weight: bold;
+        }
+        #bt, button {
+            margin: 2px 2px;
+        }
+
+        .video, .dataSV {
+            width: 40%;
+        }
+        th,
+        td {
+            width: 4cm;
+            font-weight: bold;
+        }
+
+        div.dataSV {
+            position: relative;
+            left: 58%;
+            bottom: 490px;
+        }
+
+        div.box {
+            height: 450px;
+            overflow: auto;
+        }
+
+        img {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <h1 style="text-align: center; color: teal;">Điểm Danh Sinh Viên</h1>
+    <div>
+        <div class="video">
+            <img src="{{ url_for('video_nhandang') }}">
+        </div>
+        <div class="dataSV">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã sinh viên</th>
+                        <th>Họ và Tên</th>
+                        <th>Thời gian</th>
+                    </tr>
+                </thead>
+            </table>
+            <div class="box">
+                <table>
+                    <tbody id="dssv-table-body">
+                        <script>
+                            const source = new EventSource('{{ url_for('update_dsdd') }}');
+
+                            source.onmessage = function (event) {
+                                const data = JSON.parse(event.data);
+                                const tableBody = document.getElementById('dssv-table-body');
+
+                                for (let i = 0; i < data.length; i++) {
+                                    const row = tableBody.insertRow(i);
+                                    const cell1 = row.insertCell(0);
+                                    const cell2 = row.insertCell(1);
+                                    const cell3 = row.insertCell(2);
+
+                                    cell1.innerHTML = data[i].msv;
+                                    cell2.innerHTML = data[i].name;
+                                    cell3.innerHTML = data[i].time;
+                                }
+                            };
+                        </script>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

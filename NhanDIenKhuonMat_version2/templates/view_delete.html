@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete student</title>
+    {% include "styles.html" %}
+    <style>
+        th, td {
+            padding: 2px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+    <h2>Delete {{ student.msv }}</h2>
+    <table>
+        <tr>
+            <td><span>Họ và tên:</span></td>
+            <td><span>{{ student.fullname }}</span></td>
+        </tr>
+        <tr>
+            <td><span>Mã sinh viên:</span></td>
+            <td><span>{{ student.msv }}</span></td>
+        </tr>
+    </table>
+    <form method="post">
+        <table>
+            <tr>
+                <td><input type="submit" name="action" id="bt" value="Xác nhận"></td>
+                <td><a href="/viewdssv">
+                    <button>Hủy</button>
+                </a></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

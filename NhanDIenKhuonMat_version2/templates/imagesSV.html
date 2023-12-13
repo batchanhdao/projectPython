@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+    {% include "styles.html" %}
+    <style>
+          ol {
+            float: left;
+          }
+
+          ol a {
+            display: block;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 16px;
+            text-decoration: none;
+          }
+
+    </style>
+</head>
+
+<body>
+    {% include "header.html" %}
+<h2>Danh sách ảnh {{msv}}</h2>
+<ol>
+    {% for image in image_list %}
+    <ol style="display: inline-block; margin: 10px;">
+        <img src="{{ url_for('static', filename='imagesDB/'+ msv + '/' + image) }} " width="300" height="200">
+        <br>
+        <a href="{{url_for('DeleteImage',name=image)}}">
+            <button>Xóa</button>
+        </a>
+    </ol>
+    {% endfor %}
+</ol>
+    <table>
+        <tr>
+            <td>
+                <a href="/"><button>Return</button></a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

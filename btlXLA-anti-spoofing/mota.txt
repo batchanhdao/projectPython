@@ -1,0 +1,8 @@
+Phần 3 Mô tả và phân tích hệ thống
+3.1 Mô tả hệ thống
+Mục tiêu hệ thống: Xây dựng Ứng dụng sử dụng công nghệ xác thực và nhận dạng khuôn mặt để Chống giả mạo khuôn mặt, xác thực và nhận dạng người dùng.
+
+Các chức năng chính:
+1. Xác thực người dùng qua mắt và miệng: người dùng phải thực hiện các yêu cầu để xác thực
+2. Kiểm tra có người xác thực không và kiểm tra người xác thực hiện tại và lúc trước có là một không
+3. Khi xác thực thành công thì nhận diện người đó là ai

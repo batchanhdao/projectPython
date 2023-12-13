@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách</title>
+    {% include "styles.html" %}
+    <style>
+        table, th, td {
+            border: 2px solid black;
+        }
+
+        table {
+            background-color: white;
+        }
+
+        th, td {
+            padding: 2px;
+            font-weight: bold;
+        }
+        #bt, button {
+            margin: 2px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <h1>Danh sách sinh viên</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Họ và Tên</th>
+            <th colspan="3">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.msv }}</td>
+            <td>{{ student.fullname }}</td>
+            <td><a href="{{url_for('UpdateSv',msv=student.msv)}}">
+                <button>Cập nhập</button></a>
+            </td>
+            <td><a href="{{url_for('DeleteSv',msv=student.msv)}}">
+                <button>Xóa</button></a>
+            </td>
+            <td><a href="{{url_for('SetImagesSV', name=student.fullname, msv=student.msv)}}">
+                <button>Thêm ảnh</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+
+</html>
