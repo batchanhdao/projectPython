@@ -1,0 +1,9 @@
+pip install requests
+pip install beautifulsoup4
+pip install pandas
+pip install wget
+pip install selenium
+pip install urllib3
+pip install PyAutoGUI
+pip install pyperclip
+pip install webdriver-manager

@@ -1,9 +1,0 @@
-flask
-pip install opencv-python
-dlib  conda install -c conda-forge dlib
-cmake
-face-recognition  conda install -c conda-forge face_recognition
-flask-sqlalchemy
-unidecode
-deepfake pip install deepfake
-python-dotenv

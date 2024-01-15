@@ -1,0 +1,57 @@
+pycharm
+ctrl d: tạo thêm 1 dòng tương tự.
+ctrl r,f: thay thế và tìm kiếm
+ctrl j: tạo hàm mới
+ctrl z/y: trở lại/tiếp
+ctrl x: xóa dòng
+
+ctrl e: di chuyển đến các file
+F2: Điều hướng giữa các vấn đề về mã
+shift + alt + mũi tên: di chuyển khối
+shift + mũi tên để bôi đen
+
+ctrl + alt + L: định dạng code
+Ctrl + Shift + +: Mở rộng tất cả các khối mã
+Ctrl + Shift + -: thu hẹp tất cả các khối mã;
+Ctrl + Alt + I: Tính co rút tự động;
+
+visual code
+Phím tắt	Chức năng
+Ctrl + C	Sao chép vùng chọn hoặc dòng hiện tại
+Ctrl + X	Cắt vùng chọn hoặc dòng hiện tại
+Ctrl + V	Dán
+Ctrl z/y: trở lại/tiếp
+Ctrl + Shift + K	Xóa dòng
+
+alt + mũi tên: di chuyển khối
+shift + alt + mũi tên: tạo thêm 1 dòng tương tự.
+Shift + Alt + F: Định dạng lại file (theo ngôn ngữ lập trình)
+Shift + Alt + Phím lên/xuống: Nhân đôi dòng lên/xuống
+pu/pd: để di chuyển lên xuống nhanh
+Ctrl pu/pd: để qua lại các file
+
+Home	Đi đến đầu dòng
+End	Đi đến cuối dòng
+Ctrl + Home	Đi đến đầu file
+Ctrl + End	Đi đến cuối file
+Alt + Mũi tên lên/xuống	Di chuyển lên hoặc xuống
+
+Ctrl + K, [ / ]	Thu/Bỏ gọn tất cả subregion
+Ctrl + K, 0	Thu gọn tất cả region
+Ctrl + K, J	Bỏ thu gọn tất cả region
+
+Ctrl + P	Đi đến file
+Ctrl + G	Đi đến line
+F8	Chuyển đến lỗi hoặc cảnh báo tiếp theo
+Shift + F8	Quay lại lỗi hoặc cảnh báo trước đó
+
+Ctrl + F	Mở hộp thoại Find
+Ctrl + H	Mở hộp thoại Replace
+F3	Tìm cụm từ tìm kiếm khớp tiếp theo
+Shift + F3	Tìm cụm từ tìm kiếm khớp trước đó
+ctrl + shift + o: tìm nhanh các hàm
+
+shift + mũi tên để bôi đen
+Ctrl + L	Chọn dòng hiện tại
+Ctrl + Shift + L	Chọn tất cả các lần xuất hiện của lựa chọn hiện tại
+Ctrl + F2	Chọn tất cả các kết quả phù hợp của từ hiện tại

@@ -1,0 +1,49 @@
+STT,Họ và đệm,Tên,Nữ,"Ngày, tháng, năm sinh",Nơi sinh,Dân tộc,Họ tên bố,Nghề nghiệp,Họ tên mẹ,Nghề nghiệp,TDP,Điện thoại
+1,Đặng Ngọc Bảo ,An,Nữ,2014-04-20 00:00:00,BV Hà Đông,Kinh,Đặng Như Khuyến,Cán bộ,Lưu Thị Huế,Giáo viên,Tổ 2,0975402616
+2,Nguyễn Thu ,An,Nữ,2014-10-19 00:00:00,BV Hà Đông,Kinh,Nguyễn Tuấn Anh,Kỹ sư,Ng Thị Thúy Hòa,Công nhân,Tổ 5,0943378579
+3,Dương Trọng Trường ,An,Nam,2014-05-10 00:00:00,Hà Nội,Kinh,Dương Văn Hải,Kỹ sư,Lê Thị Thu,Kế toán,Tổ 5,0977612578
+4,Nguyễn Thế ,An,Nam,2014-09-27 00:00:00,Hưng Yên,Kinh,Nguyễn Văn Huỳnh,Nhân viên,Nguyễn Thị Hoa,Giáo viên,Tổ 2,0988645632
+5,Nguyễn Ngọc Tú ,Anh,Nữ,2014-10-16 00:00:00,BV Phụ Sản,Kinh,Nguyễn Đức cương,Kinh doanh,Nguyễn Thị An,Nhân viên,Tổ 5,0904011876
+6,Nguyễn Hà ,Anh,Nữ,2014-09-06 00:00:00,Hà Đông,Kinh,Nguyễn Trần Thế,Tự do,Trần Thị Thương,Kế toán,Tổ 6,0971769886
+7,Lê Bảo,Anh,Nam,2014-12-23 00:00:00,BV Hà Đông,Kinh,Lê Văn Mẫn,Giáo viên,Nguyễn Minh Hòa,Kế toán,Tổ 13,0972952587
+8,Ng Thị Phương ,Anh,Nữ,2014-06-07 00:00:00,BV Hà Đông,Kinh,Nguyễn Ngọc Quế,Tự do,Nguyễn Thị Chiện,Tự do,Tổ 2,0977528608
+9,Nguyễn Đặng Hòa ,Bình,Nữ,2014-05-03 00:00:00, Hà Đông,Kinh,Nguyễn Trọng Đoàn,Bộ đội,Đặng Thị Vấn,Kế toán,Tổ 1,0982019826
+10,Đặng Trần Quý ,Chi,Nữ,2014-08-13 00:00:00,BV Hà Đông,Kinh,Đặng Như Lâm,Tự do,Mi a Mi,Tự do,Tổ 3,0888588893
+11,Nguyễn Thị Ánh ,Dương,Nữ,2014-08-05 00:00:00,BV Hà Đông,Kinh,nguyễn khắc Chung,Tự do,Tạ Thị Anh,Tự do,Tổ 5,0902125932
+12,Nguyễn Thùy ,Dương,Nữ,2014-06-17 00:00:00,Hà Nội,Kinh,Nguyễn Đình Hiệp,Tự do,Nguyễn Thu Hà,Kế toán,Tổ 4,0584629999
+13,Nguyễn Bá Tuấn ,Đạt,Nam,2014-05-29 00:00:00,BV Hà Đông,Kinh,Nguyễn Bá Đông,Tự do,Hoàng Thị Luyến,Y tế ,Tổ 6,0973638417
+14,Nguyễn Tiến,Đạt,Nam,2014-02-05 00:00:00,Hà Nội,Kinh,Nguyễn Duy Thông,Tự do,Nguyễn Thị Anh,Tự do,Tổ 3,0913759722
+15,Nguyễn Anh ,Đức,Nam,2014-10-11 00:00:00,Yên Nghĩa,Kinh,Nguyễn Văn Tiến,Kinh doanh,Phạm Thị Thùy,Kế toán,Tổ 11,0962756162
+16,Nguyễn Minh ,Đức,Nam,2014-12-28 00:00:00,BV Phụ Sản,Kinh,Nguyễn Quang Vũ,Công chức,Phạm Thị Thùy,Công chức,Tổ 6,0988078390
+17,Lê  Gia ,Hân,Nữ,2014-06-29 00:00:00,Thanh Hóa,Kinh,Lê Văn Hùng,Công nhân,Nguyễn Thị Huế ,Công nhân,Tổ 6,0974451789
+18,Đặng Minh ,Hiếu,Nam,2014-05-30 00:00:00,Hà Nội,Kinh,Đặng Trần Kiên,Cán bộ, Thị Kim Dung,Cán bộ,Tổ 5,0904688898
+19,Nguyễn Lê Mạnh ,Hùng,Nam,2014-11-12 00:00:00,Hà Nội,Kinh,Nguyễn Văn Huỳnh,Kinh Doanh,Lê thị Kim Huệ,Cán bộ,Tổ 6,0972357419
+20,Ng: Bá ,Huy,Nam,2013-06-18 00:00:00,BV Phụ Sản,Kinh,Nguyễn Bá Trà,Tự do,Lê Thị Thùy Anh,Giáo viên,Tổ 6,0977198833
+21,Nguyễn Gia ,Hưng,Nam,2014-10-13 00:00:00,BV Hà Đông,Kinh,Nguyễn Văn Trường,Công nhân,lê Thị Phương,Tự do,Tổ 6,0384719882
+22,Lê Diệu ,Hương,Nữ,2014-01-08 00:00:00,BV Hà Đông,Kinh,Lê Đình Phúc,Tự do,Tạ Thị Phấn,Công nhân,Tổ 3,0978972826
+23,Nguyễn Việt ,Khang,Nam,2014-09-14 00:00:00,BV 103,Kinh,Nguyễn Văn Nam,Tự do,Nguyễn Thị Hảo,Tự do,Tổ 11,0903452292
+24,Đặng Như ,Khoa,Nam,2014-12-18 00:00:00,BV Hà Đông,Kinh,Đặng Như Cường,Công nhân,Nguyễn Vân Anh,Công nhân,Tổ 2,0986842183
+25,Nguyễn Nhã ,Kim,Nữ,2014-10-10 00:00:00,Hà Nội,Kinh,Nguyễn Hữu Hiếu,Bác sĩ,Trần Thị Kim,Giáo viên,Tổ 5,0358960230
+26,Lê Thị Thùy ,Linh,Nữ,2014-01-12 00:00:00,Hà Nội,Kinh,Lê Đắc Tài,Tự do,Lê Thị Thu Hiền,Giáo viên,Tổ 1,0964983192
+27,Lê Khánh ,Linh,Nữ,2014-03-14 00:00:00,BV Hà Đông,Kinh,Lê Thái Bình,Tự do,Nguyễn Thị Hiền,Tự do,Tổ 1,0372530268
+28,Đinh Tiến ,Minh,Nam,2014-07-07 00:00:00,BV Hà Đông,Kinh,Đinh Tiến Thành,Kỹ sư,Đặng Thị Quý,NVdược,Tổ 2,0395976546
+29,Nguyễn Viết Đức,Minh,Nam,2014-05-15 00:00:00,BV Phụ Sản,Kinh,Nguyễn Viết Đức,Nhân viên,Nguyễn Thị Vân,Nhân viên,CT3,0988598269
+30,Cao Trà ,My,Nữ,2014-04-28 00:00:00,Yên Nghĩa,Kinh,Cao Việt Hưng,Dược sĩ,Nguyễn Thị Nguyệt,Dược sĩ,Tổ 6,0983464686
+31,Lê Vũ Trà ,My,Nữ,2014-08-15 00:00:00,Hà Nội,Kinh,Lê Giang Nam,Nhân viên,Vũ  Phương thanh,Nhân viên,Tổ 2,0979018587
+32,Trương Kim ,Ngân,Nữ,2014-08-17 00:00:00,Thái Bình,Kinh,Trương Văn Xuân,Kỹ sư điện,Đinh Thị Huyền,Ké toán,Tổ 1,0966614574
+33,Tô Thảo ,Nguyên,Nữ,2014-08-19 00:00:00,BV Hà Đông,Kinh,Tô Văn Chuẩn,Bộ Đội,Nguyễn Thị Tuyết,Giáo viên,Tổ 6,0816310456
+34,Nguyễn Bảo ,Nhi,Nữ,2014-11-15 00:00:00,BV Hà Đông,Kinh,Nguyễn Đình Tú,Nhân viên,Nguyễn Thị Tuyết,Nhân viên,Tổ 13,0395575565
+35,Nguyễn Đình Gia ,Phong,Nam,2014-05-16 00:00:00,Hà Nội,Kinh,Nguyễn Đình Đoàn,Kinh doanh,Lê Thị Xuyến,Ké toán,Tổ 6,0904980399
+36,Nguyễn Võ Nam ,Phong,Nam,2014-08-15 00:00:00,Hà Nội,Kinh,Nguyễn Hảo Nam,Kinh Doanh,Võ Mai Hương,Giáo viên,CT2,0969999528
+37,Nguyễn Vũ ,Quang,Nam,2014-06-06 00:00:00,BV Phụ Sản,Kinh,Nguyễn Vă Chiến,Lái xe,Vũ Hà Thanh,Điều dưỡng,Tổ 6,0947127986
+38,Lê Thái ,Sơn,Nam,2014-10-09 00:00:00,BV Hà Đông,Kinh,Lê Đình Thái,Lái xe,Nguyễn Thu Trang,Giáo viên,Tổ 2,0969334889
+39,Lê Đắc ,Thành,Nam,2014-08-26 00:00:00,Hà Nội,Kinh,Lê Đắc Tiến,HDV Du lịch,Lê Thanh Châu,HDV Du lịch,Tổ 1,0913239286
+40,Trần Phương ,Thảo,Nữ,2014-04-03 00:00:00,Hà Nội,Kinh,Trần Quang Huy,Kỹ sư,Nguyễn Thu Hiền,Bác sĩ,Tổ 5,0978041416
+41,Nguyễn Huyền ,Trang,Nữ,2014-10-17 00:00:00,Hà Đông,Kinh,Nguyễn Công Tràng,Kỹ sư,Lê Thị Mến,Giáo viên,Tổ 2,0985891187
+42,Trần Văn ,Tú,Nam,2014-09-10 00:00:00,BV Hà Đông,Kinh,Trần Văn Thành,Lái xe,Nguyễn Thị Hồng,Tự do,Tổ 1,0975341088
+43,Nguyễn Bảo ,Anh,Nam,03/04/2014,Hà Nội,Kinh,Nguyễn Văn Thắng,Khác,Ng  Hồng Chuyên,Tự do,Tổ 03,0344466786
+44,Nguyễn Đức Anh ,Bình,Nam,25/03/2014,Hà Nội,Kinh,Nguyễn Đức Minh,Công nhân,Nguyễn  Hồng Ánh,Công nhân,Tổ 1,0396476601
+45,Nguyễn Thị Gia,Nhi,Nữ,03/02/2014,Hà Nội,Kinh,Nguyễn Duy Sáng,Tự do,Đình Thị Hạnh,Tự do,Tổ 4,0976146657
+46,Lê Minh,Phúc,Nam,08/08/2014,Hà Nội,Kinh,Lê Thanh Toàn,Kế toán,Ng Thị Thu Thủy,Kế toán,Tổ 2,0975434669
+47,Nguyễn Minh,Phương,Nữ,16/12/2014,Thái Bình,Kinh,Nguyễn Minh Đức,Khác,Ng Th Xuân Lan,Khác,Tổ 6,0334090989
+48,Lê Thị Hải,Yến,Nữ,19/01/2014,Hà Nội,Kinh,Lê Hồng Đức,Khác,Hoàng T-Ánh Mai,Khác,Tổ 3,0985778725

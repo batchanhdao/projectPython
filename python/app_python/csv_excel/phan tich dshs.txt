@@ -1,0 +1,5 @@
+1. tổng điểm
+2. xếp loại, số lượng
+3. có danh sách phân loại học sinh theo xếp loại
+4. rank
+5. tách họ tên

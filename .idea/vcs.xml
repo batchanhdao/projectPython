@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Cau-truc-du-lieu-va-giai-thuat" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/FaceRecognization" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/btlLTM" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/btlXLA-anti-spoofing" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/btl_httmFaceRecognization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/python/python_for_ai/buoi6_phanTach/dpca" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/python/python_for_ai/buoi6_phanTach/dpca/dpca" vcs="Git" />
   </component>
 </project>

@@ -1,6 +1,0 @@
-pip install numpy
-pip install opencv-python
-pip install cmake
-pip install wheel
-pip install dlib
-pip install face_recognition
