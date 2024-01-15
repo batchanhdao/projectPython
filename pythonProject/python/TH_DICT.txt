@@ -1,0 +1,29 @@
+Phương thức	Mô tả
+copy()	Phương thức copy() trả về một bản sao nông của từ điển.
+clear()	Phương thức clear() xóa tất cả các mục khỏi từ điển.
+pop()	Loại bỏ và trả về một phần tử từ một từ điển có key đã cho.
+popitem()	Loại bỏ cặp key-giá trị tùy ý khỏi từ điển và trả về dưới dạng tuple.
+get()	Đây là một phương pháp thông thường để truy cập một giá trị cho key.
+dictionary_name.values()	Trả về một danh sách tất cả các giá trị có sẵn trong một từ điển nhất định.
+str()	Tạo ra một đại diện chuỗi có thể in của một từ điển.
+update()	Thêm các cặp key-giá trị của từ điển dict2 vào dict
+setdefault()	Đặt dict [key] = default nếu key chưa có trong dict
+key()	Trả về danh sách các key của từ điển
+item()	Trả về danh sách các cặp tuple (key, giá trị) của dict.
+
+SET
+
+add()	Thêm một phần tử tới set
+clear()	Xóa tất cả các phần tử của một set
+copy()	Returns a copy of the set
+
+
+discard()	Xóa phần tử được chỉ định.
+intersection()	Trả về một set mà các phần tử của nó tồn tại trong cả 2 set đã cho.
+intersection_update()	Xóa các phần tử của set này mà không tồn tại trong set kia.
+pop()	Xóa phần tử cuối cùng của một set.
+remove()	Xóa phần tử được chỉ định.
+symmetric_difference()	Trả về một set mà chứa các phần tử của cả 2 set đã cho, sao cho các phần tử này tồn tại trong set này nhưng không tồn tại trong set kia.
+
+union()	Trả về môt set mà được nối từ 2 set với nhau.
+update() Nối set này với set khác.

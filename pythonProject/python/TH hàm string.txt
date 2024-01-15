@@ -1,0 +1,425 @@
+s.count(val,start,end), s.endswith(val,start,end)->true/false, s.find(val), s.isalnum()/isalpha()/isdigit()->true/false, s.join(str/list), len(s), s.upper()/lower(), s.strip(str), s.split(str), s.replace()
+string = "vncoder"
+print(string.ljust(17, "-"))
+# Kết quả: vncoder.vn--
+
+2. Center()
+Hàm này có tác dụng trả về chuỗi được hiển thị ở giữa một chuỗi.
+Cú Pháp:
+string.center(len, char)
+Trong đó:
+string là chuỗi các bạn cần chuyển đổi.
+len là số lượng ký tự của chuỗi mới.
+char là ký tự sẽ hiển thị ở 2 bên chuỗi cũ. Mặc định nó sẽ là khoảng trắng.
+VD: Nếu khó hiểu thì mời mọi người cùng xem qua ví dụ sau:
+string = "vncoder.vn"
+print(string.center(20));
+# Kết quả:    vncoder.vn
+
+print(string.center(20, '*'));
+# Kết quả:*****vncoder.vn*****
+Chú ý: Nếu len nhỏ hơn độ dài chuỗi cần xử lý thì, hàm này sẽ trả về chuỗi ban đầu.
+3. Count()
+Hàm này có tác dụng đếm xem trong chuỗi có bao nhiêu ký tự cần tìm.
+Cú Pháp:
+string.count(sub, start, end)
+Trong đó:
+sub là chuỗi các bạn cần tìm kiếm và đếm.
+start là index bắt của chuỗi cần tìm. Mặc định thì strart = 0.
+end là index kết thúc của chuỗi cần tìm.  Mặc định thì end = len() của chuỗi.
+VD: 
+string = "vncoder.vn"
+
+print(string.count('v'));
+# Kết quả: 2    
+
+print(string.count('v', 3));
+# Kết quả: 1
+4. encode()
+Hàm này có tác dụng encode (mã hóa) một chuỗi.
+Cú pháp:
+string.encode(type, mode)
+Trong đó:
+type là kiểu encode của string. Mặc định sẽ là utf-8
+mode là chế độ báo lỗi nếu có khi encode. Python hỗ trợ 6 dạng mode như sau:strict - Chế độ nghiêm ngặt, nó sẽ hiển thị lỗi dưới UnicodeDecodeError exception. Đây là chế độ mặc định.ignore - bỏ qua tất cả các lỗi nếu có.replace - nó sẽ thay thế lỗi bằng dấu ?.xmlcharrefreplace - chèn tham chiếu XML.backslashreplace - Chèn chuỗi \uNNNN.namereplace - Chèn chuỗi \N{...}.
+strict - Chế độ nghiêm ngặt, nó sẽ hiển thị lỗi dưới UnicodeDecodeError exception. Đây là chế độ mặc định.
+ignore - bỏ qua tất cả các lỗi nếu có.
+replace - nó sẽ thay thế lỗi bằng dấu ?.
+xmlcharrefreplace - chèn tham chiếu XML.
+backslashreplace - Chèn chuỗi \uNNNN.
+namereplace - Chèn chuỗi \N{...}.
+VD:
+string = "vncoder.vn"
+
+print(string.encode());
+# Kết quả: b'vncoder.vn'
+5. decode()
+Hàm này có tác dụng decode (giải mã) chuỗi trông Python.
+Cú Pháp:
+string.decode(type, mode)
+Về phần type và mode thì hoàn toàn giống ở encode nhé mọi người!
+VD:
+string = b'vncoder.vn'
+
+print(string.decode());
+# Kết quả: vncoder.vn
+6. endswith()
+Hàm này có tác dụng kiểm tra xem chuỗi hoặc khoảng chuỗi có được kết thúc bằng ký tự nào đó hay không. Nó sẽ trả về True nếu đúng và False nếu sai.
+Cú pháp:
+string.endswith(str, start, end)
+Trong đó:
+str là chuỗi các bạn cần xác thực xem có phải chuỗi kết thúc không.
+strart là index bắt đầu chuỗi cần so sánh. Mặc định thì start = 0.
+end là index kết thúc chuỗi cần so sánh.  Mặc định thì end = len().
+VD:
+string = 'vncoder.vn'
+
+print(string.endswith('n'));
+# Kết quả: True
+
+print(string.endswith('n', 3, 6));
+# Kết quả: False
+7. expandtabs()
+Hàm này có tác dụng tìm kiếm thay thế \t bằng các ký tự khoảng trắng.
+Cú Pháp:
+string.expandtabs(len)
+Trong đó: len là số lượng khoảng trắng mà bạn muốn thay thế cho một \t. Mặc định thì len = 8.
+VD:
+string = 'vncoder.vn\thoc lap trinh'
+
+print(string.expandtabs());
+# Kết quả: vncoder.vn       hoc lap trinh
+8. find()
+Hàm này có tác dụng tìm kiếm một chuỗi trong một chuỗi hoặc khoảng chuỗi. Nó sẽ trả về là vị trí bắt đầu của chuỗi tìm được trong chuỗi nếu tìm thấy và nếu không tìm thấy nó sẽ trả về  -1.
+Cú pháp:
+string.find(str, start, end)
+Trong đó:
+str là chuỗi các bạn cần xác thực xem có phải chuỗi kết thúc không.
+strart là index bắt đầu chuỗi cần so sánh. Mặc định thì start = 0.
+end là index kết thúc chuỗi cần so sánh.  Mặc định thì end = len().
+VD:
+string = 'vncoder.vn'
+
+print(string.find('vn'));
+# Kết quả: 0
+9. index()
+Hàm này tương tự như hàm find() chỉ khác duy nhất là nếu như không tìm thấy thì hàm này sẽ gọi exception.
+VD:
+string = 'vncoder.vn'
+
+print(string.index('...vn'));
+# Kết quả: ValueError: substring not found
+10. isalnum()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải là chứa duy nhất các ký tự chữ hoặc chuỗi hay không? Nó sẽ trả về True nếu chuỗi chỉ chứa các ký tự chữ hoặc số. Và ngược lại nó sẽ trả về False nếu chuỗi chứa ký tự khác chuỗi và số.
+VD:
+string = 'vncoder'
+
+print(string.isalnum());
+# Kết quả: True
+
+string = 'vncoder.vn'
+
+print(string.isalnum());
+# Kết quả: False
+11. isalpha()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải là chứa duy nhất các ký tự chữ hay không? Nó sẽ trả về True nếu chuỗi này chỉ chứa duy các ký tự chữ trong bảng chữ cái, và sẽ trả về False nếu nó chứa số hoặc ký tự đặc biệt khác.
+VD:
+string = 'vncoder999'
+
+print(string.isalpha());
+# Kết quả: False
+
+string = 'vncoder'
+
+print(string.isalpha());
+# Kết quả: True
+12. isdigit()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải là chứa duy nhất các chữ số hay không? Nó sẽ trả về True nếu đúng và False nếu sai.
+VD:
+string = 'vncoder.vn'
+
+print(string.isdigit());
+# Kết quả: False
+
+string = '08042020'
+
+print(string.isdigit());
+# Kết quả: True
+13. islower()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải là in thường hay không? Nó sẽ trả về True nếu đúng và False nếu sai.
+VD:
+string = 'vncoder.vn'
+print(string.islower());
+# Kết quả: True
+
+string = '22020202'
+print(string.islower());
+# Kết quả: False
+
+string = 'VNcoder.vn'
+print(string.islower());
+# Kết quả: False
+14. isupper()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải là in Hoa hay không? Nó sẽ trả về True nếu đúng và False nếu sai.
+VD:
+string = 'VNCODER&gt;VN'
+print(string.isupper());
+# Kết quả: True
+
+string = 'vncoder.vn'
+print(string.isupper());
+# Kết quả: False
+15. isnumeric()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải chỉ chứa duy nhất các ký tự số hay không? Nó sẽ trả về True nếu đúng và False nếu sai.
+VD:
+string = 'vncoder.vn'
+print(string.isnumeric());
+# Kết quả: False
+
+string = '08042020'
+print(string.isnumeric());
+# Kết quả: True
+16. isspace()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải chỉ chứa duy nhất các ký tự khoảng trắng không? Nó sẽ trả về True nếu đúng và False nếu sai.
+VD:
+string = '         '
+print (string.isspace());
+# Kết quả: True
+
+string = 'vncoder.vn'
+print (string.isspace());
+# Kết quả: False
+17. istitle()
+Hàm này có tác dụng kiểm tra xem một chuỗi có phải là title hay không, chuỗi title là chuỗi có các chữ cái đầu đều được in hoa. Nó sẽ trả về True nếu đúng và ngược lại False nếu sai.
+VD:
+string = 'vncoder title'
+print(string.istitle())
+# Kết quả: False
+
+string = 'Vncoder Title'
+print(string.istitle())
+# Kết quả: True
+18. join()
+Hàm này có tác dụng join squence bởi string.
+Cú pháp:
+string.join(squence)
+Trong đó: squence là string, list,... mà bạn cần join lại với nhau bởi chuỗi string. 
+VD:
+string_one = ' '
+string_two = 'vncoder'
+print(string_one.join(string_two))
+# Kết quả: v n c o d e r
+
+string_one = '-'
+string_two = ['V','N','C',]
+print(string_one.join(string_two))
+# Kết quả: V-N-C
+19. len()
+Hàm này có tác dụng trả về độ dài của chuỗi.
+VD:
+string = "vncoder.vn"
+
+print(len(string))
+# Kết quả: 10
+20. ljust()
+Hàm này có tác dụng trả về một chuỗi với độ dài length được xác định, nếu chuỗi được chọn nhỏ hơn width thì nó sẽ sử dụng char để bù chỗ thiếu đó về phía bên phải của chuỗi.
+string.ljust(length, char)
+Trong đó:
+length là độ dài của chuỗi mới cần in ra.
+char là ký tự sẽ bù vào chuỗi mới nếu chuỗi cũ không đủ length. Mặc định thì char = khoảng trắng.
+VD:
+string = "vncoder"
+
+print(string.ljust(17, "-"))
+# Kết quả: vncoder.vn--
+21. rjust()
+Tương tự hàm ljust() nhưng chỉ có điều là nó sẽ bù về phía bên trái của chuỗi.
+VD:
+string = "vncoder.vn"
+
+print(string.rjust(17, "-"))
+# Kết quả: --vncoder.vn
+22. lower()
+Hàm này có tác dụng chuyển đổi chuỗi về dạng in thường.
+VD:
+string = "VNCODER&gt;VN"
+
+print(string.lower())
+# Kết quả: vncoder.vn
+23. upper()
+Hàm này có tác dụng chuyển đổi chuỗi sang dạng in hoa.
+VD:
+string = "vncoder.vn"
+
+print(string.upper())
+# Kết quả: VNCODER.VN
+24. lstrip()
+Hàm này có tác dụng loại bỏ đi các ký tự char ở phía đầu của chuỗi.
+Cú Pháp:
+string.lstrip(char)
+Trong đó: char là ký tự bạn muốn loại bỏ. Mặc định thì char sẽ bằng khoảng trắng (white space).
+VD:
+string = "  vncoder.vn"
+
+print(string.lstrip())
+# Kết quả: vncoder.vn
+
+string = "----vncoder.vn"
+
+print(string.lstrip('-'))
+# Kết quả: vncoder.vn
+25. rstrip()
+Tương tự như lstrip(), chỉ khác là rstrip nó sẽ loại bỏ char ở phần cuối của chuỗi.
+VD:
+string = "vncoder.vn    "
+
+print(string.rstrip())
+# Kết quả: vncoder.vn
+
+string = "vncoder.vn----"
+
+print(string.rstrip('-'))
+# Kết quả: vncoder.vn
+26. strip()
+Hàm này là sự kết hợp của lstrip() và rstrip(). Nó sẽ lại bỏ các ký tự char ở cả hai đầu của chuỗi.
+VD:
+string = "   vncoder.vn    "
+
+print(string.strip())
+# Kết quả: vncoder.vn
+
+string = "----vncoder.vn----"
+
+print(string.strip('-'))
+# Kết quả: vncoder.vn
+27. rfind()
+Tương tự như hàm find(), nhưng hàm này nó sẽ trả về index của chuỗi cuối cùng tìm được trong chuỗi. Cú pháp sử dụng tương tự hàm find().
+VD:
+string = "vncoder.vn"
+
+print(string.rfind('v'))
+# Kết quả: 7
+28. rindex()
+Tương tự như hàm index(),nhưng hàm này nó sẽ trả về index của chuỗi cuối cùng tìm được trong chuỗi. Cú pháp sử dụng tương tự hàm index().
+VD:
+string = "vncoder.vn"
+
+print(string.rindex('vn'))
+# Kết quả: 8
+29. replace()
+Hàm này có tác dụng tìm kiếm và thay thế chuỗi tìm được bằng chuỗi mới.
+Cú Pháp:
+string.replace(old,new,max)
+Trong đó:
+old là chuỗi mà bạn cần tìm kiếm trong string.
+new là chuỗi mà bạn cần thay thế cho chuỗi old tìm được.
+max là số lượng từ có thể thay thế tối đa.
+VD: 
+string = "vncoder*!"
+
+print(string.replace('*', '.vn'))
+# Kết quả: vncoder.vn!
+
+string = "A A A"
+
+print(string.replace('A', 'vncoder', 2))
+# Kết quả: Tai Tai vncoder
+30. max()
+Hàm này trả về chữ cái có độ sắp xếp cuối cùng theo bảng chữ cái alphabet nằm trong chuỗi.
+VD:
+string = "vncoder.vn"
+
+print(max(string))
+# Kết quả: v
+31. min()
+Hàm này trả về chữ cái có độ sắp xếp đầu tiên theo bảng chữ cái alphabet nằm trong chuỗi.
+VD:
+string = "vncoder.vn"
+
+print(min(string))
+# Kết quả: .
+32. title()
+Hàm này có tác dụng chuyển đổi chuỗi sang kiểu title (xem ở trên).
+VD:
+string = "vncoder.vn title"
+
+print(string.title())
+# Kết quả: Vncoder.Vn Title
+33. swapcase()
+Hàm này có tác dụng chuyển đổi chuỗi sang dạng nghịch đảo của nó (nghịch đảo ở đây là hoa - thường).
+VD:
+string = "Vncoder"
+
+print(string.swapcase())
+# Kết quả: vNCODER
+34. zfill()
+Hàm này có tác dụng như hàm ljust() , nhưng nó sẽ chỉ thêm được các ký tự zero (số 0) và trước chuỗi thôi.
+VD:
+string = "vncoder.vn"
+
+print(string.zfill(15))
+# Kết quả: 00000vncoder.vn
+35. isdecimal()
+Hàm này có tác dụng gần như hàm isdigit(), nó sẽ trả về True nếu chuỗi cần kiểm tra chỉ chứa các số thập phân, và ngược lại....
+VD:
+string = "vncoder.vn 2020"
+
+print(string.isdecimal())
+# Kết quả: False
+
+string = "2020"
+
+print(string.isdecimal())
+# Kết quả: True
+36. split()
+Hàm này có tác dụng tác chuỗi thành mảng bởi các char.
+Cú Pháp:
+string.split(char, max)
+Trong đó:
+char là ký tự các bạn tìm và tách chuỗi bởi nó. Mặc định thì char = khoảng trắng.
+max là số lượng chuỗi tách tối đa.
+VD: 
+string = "vncoder.vn"
+
+print(string.split('.'))
+# Kết quả: ['vncoder', 'vn']
+37. splitlines()
+Hàm này sẽ tách chuỗi bởi các ký tự \n.
+Cú pháp:
+string.splitlines(max)
+Trong đó: max là số lần có thể cắt tối đa.
+VD:
+string = "vn\ncoder\n.vn"
+
+print(string.splitlines())
+# Kết quả: ['vn', 'coder', '.vn']
+38. startswith()
+Hàm này có tác dụng kiểm tra xem chuỗi hoặc khoảng chuỗi có được bắt đầu bằng ký tự nào đó hay không. Nó sẽ trả về True nếu đúng và False nếu sai.
+Cú pháp:
+string.startswith(str, start, end)
+Trong đó:
+str là chuỗi các bạn cần xác thực xem có phải chuỗi bắt đầu không.
+strart là index bắt đầu chuỗi cần so sánh. Mặc định thì start = 0.
+end là index kết thúc chuỗi cần so sánh.  Mặc định thì end = len().
+VD:
+string = 'vncoder.vn'
+
+print(string.startswith('v', 3, 10));
+# Kết quả: False
+39. maketrans()
+Hàm này có tác dụng tạo ra các translation cho chuỗi. Dùng kết hợp với phương thức translate().
+Cú Pháp:
+string.maketrans(in, out)
+Trong đó:
+in là chuỗi các ký tự các bạn cần tìm.
+out là chuỗi chứa các ký tự các bạn cần thay thế.
+40. translate()
+Hàm này có tác dụng thực thi việc dịch chuỗi. Dùng kết hợp với phương thức makestrans().
+VD:
+inputs = "1as";
+outputs = "2br";
+string = "vncoder.vn";
+
+trans = string.maketrans(inputs, outputs)
+print(string.translate(trans))
+# Kết quả: vncoder.vn

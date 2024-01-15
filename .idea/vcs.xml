@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Cau-truc-du-lieu-va-giai-thuat" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/FaceRecognization" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/btlLTM" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/btlXLA-anti-spoofing" vcs="Git" />

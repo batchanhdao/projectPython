@@ -1,0 +1,7 @@
+vào thư mục: cd <tên file> (cd: thay đổi đường dẫn)
+liệt kê tất cả file: dir
+trở lại: cd ..
+vào ổ cứng: <tên ổ cứng>:
+làm sạch: cls
+run py: "python + name"
+pip list: xem các thư viện đã cài đặt

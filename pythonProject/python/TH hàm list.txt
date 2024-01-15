@@ -1,0 +1,184 @@
+list(), len(), max/min(), count(val), a.append(list), a.index(val), a.reverse()
+a.remove(val),a.pop(index), a.sort(reverse=t/f,key=def),a.clear().
+1. list()
+Hàm này có tác dụng chuyển đổi kiểu dữ liệu của một biến sang dạng list.
+Cú pháp:
+list(data)
+VD:
+string = "vncoder.vn"
+print(list(string))
+# Ket Qua: ['v', 'n', 'c', 'o', 'd', 'e', 'r', '.', 'v', 'n']
+2. len()
+Hàm này trả về số lượng phần tử có trong list.
+Cú pháp:
+len(list)
+VD:
+list = ['A', 'B', 'C']
+print(len(list))
+#Kết quả: 3
+3. max()
+Hàm này sẽ trả về phần tử có giá trị lớn nhất trong list. Nếu là chuỗi thì nó sẽ trả về phần tử có độ dài chuỗi dài nhất, nếu là số thì nó sẽ trả về phần tử có số lớn nhất.
+Cú pháp:
+max(list)
+VD:
+list = ['A', 'B', 'C']
+print(max(list))
+#Kết quả: C
+list = ['1', '3', '2']
+print(max(list))
+#Kết quả: 3
+4. min()
+Hàm này sẽ trả về phần tử có giá trị nhỏ nhất trong list. Nếu là chuỗi thì nó sẽ trả về phần tử có độ dài chuỗi ngắn nhất, nếu là số thì nó sẽ trả về phần tử có số nhỏ nhất.
+Cú pháp:
+min(list)
+VD:
+list = ['A', 'B', 'C']
+print(min(list))
+#Kết quả: A
+list = ['1', '3', '2']
+print(max(list))
+#Kết quả: 1
+5. append()
+Phương thức này có tác dụng thêm phần vào cuối của một list.
+Cú pháp:
+mylist.append(obj)
+Trong đó:
+mylist là list mà các bạn cần thêm phần tử.
+obj là phần tử mà bạn muốn thêm vào mylist.
+VD: 
+list = ['A', 'B', 'C']
+list.append('D')
+print(list)
+# Kết quả: ['A', 'B', 'C', 'D']
+list.append(('E', 'F'))
+print(list)
+# Kết quả: ['A', 'B', 'C', 'D', ('E', 'F')]
+6. extend()
+Hàm này có tác dụng kế thừa lại các phần tử của list2 và thêm vào trong list1.
+Cú pháp:
+list1.extend(list2)
+Trong đó: 
+list1 là list mà bạn muốn kế thừa từ một list khác (ở đây là list2).
+list2 là list được sử dụng để cho list khác kết thừa (ở đây là list1).
+VD:
+list = ['A', 'B', 'C']
+list.extend('D')
+print(list)
+# Kết quả: ['A', 'B', 'C', 'D']
+list.extend(('E', 'F'))
+print(list)
+# Kết quả: ['A', 'B', 'C', 'D', 'E', 'F']
+7. count()
+Phương thức này có tác dụng đếm số lần xuất hiện của một thành phần trong list!
+Cú pháp:
+mylist.count(val)
+Trong đó:
+mylist là list mà các bạn cần kiểm tra.
+val là phần tử mà bạn muốn tìm và đếm trong list mylist.
+VD:
+list = ['A', 'B', 'C']
+print(list.count('A'))
+# Kết quả: 1
+8. index()
+Phương thức này có tác dụng trả về index xuất hiện đầu tiên của phần tử mà bạn muốn tìm và nếu như không tìm thấy thì nó sẽ gọi exception.
+Cú Pháp:
+mylist.index(val)
+Trong đó:
+mylist là list mà các bạn cần kiểm tra.
+val là phần tử mà bạn muốn tìm trong list mylist.
+VD: 
+list = ['A', 'B', 'C']
+print(list.index('B'))
+# Kết quả: 1
+print(list.index('D'))
+# Kết quả: ValueError: 'D' is not in list
+9. insert()
+Phương thức có tác dụng thêm phần tử vào vị trí index của list, và các phần tử sau index đó sẽ được đẩy về phía sau.
+Cú pháp:
+mylist.insert(index, val)
+Trong đó:
+mylist là list mà các bạn cần thêm.
+index là vị trí mà bạn muốn thêm phần tử val vào.
+val là phần tử mà bạn muốn thêm vào trong list mylist.
+VD: 
+list = ['A', 'B', 'C']
+list.insert(0, 'Z')
+print(list)
+# Kết quả: ['Z', 'A', 'B', 'C']
+list.insert(2, 'D')
+print(list)
+# Kết quả: ['Z', 'A', 'D', 'B', 'C']
+10. reverse()
+Phương thức này có tác dụng đảo ngược vị trí của các phần tử trong list.
+Cú pháp:
+mylist.reverse()
+Trong đó, mylist là list mà các bạn muốn đảo ngược.
+VD:
+list = ['A', 'B', 'C']
+list.reverse()
+print(list)
+# Kết quả: ['C', 'B', 'A']
+11. remove()
+Phương thức này có tác dụng xóa phần tử khỏi list.
+Cú Pháp:
+mylist.remove(val)
+Trong đó:
+mylist là list mà các bạn cần xóa phần tử.
+val là phần tử mà bạn muốn muốn xóa trong list mylist.
+VD: 
+list = ['A', 'B', 'C']
+list.remove('C')
+print(list)
+# Kết quả: ['A', 'B']
+12. pop()
+Phương thức này có tác dụng xóa bỏ phần tử trong list dựa trên index của nó.
+Cú pháp:
+mylist.pop(index)
+Trong đó:
+mylist là list mà các bạn cần xóa phần tử.
+index là index của phần tử mà bạn muốn muốn xóa trong list mylist. Mặc định thì index = mylist[-1] (phần tử cuối cùng trong list).
+VD:
+list = ['A', 'B', 'C', 'D', 'E']
+list.pop()
+print(list)
+# Kết quả: ['A', 'B', 'C', 'D']
+list.pop(2)
+print(list)
+# Kết quả: ['A', 'B', 'D']
+13. sort()
+Phương thức này có tác dụng sắp xếp lại các phần tử trong list theo một thứ tự xác định.
+Cú pháp:
+mylist.sort(reverse, key)
+Trong đó:
+mylist là list mà các bạn muốn sắp xếp.
+reverse là một boolean cấu hình kiểu sắp xếp. Nếu reverse = True thì list sẽ được sắp xếp từ lớn đến bé, nếu reverse = False thì list sẽ được sắp xếp theo thứ tự từ bé đến lớn. Mặc định thì reverse = False.
+key là callback def để xử lý list hoặc là một lamda function (thường được dùng để sắp xếp các list tuple hoặc dictionary).
+VD: 
+list = ['A', 'C', 'B', 'E', 'D']
+
+list.sort()
+print(list)
+# Kết quả: ['A', 'B', 'C', 'D', 'E']
+
+list.sort(reverse=True)
+print(list)
+# Kết quả: ['E', 'D', 'C', 'B', 'A']
+
+
+def custom_sort(elem):
+    return elem[1]
+list = [(1, 2), (5, 7), (7, 100), (4, 4)]
+list.sort(key=custom_sort)
+print(list)
+# Kết quả: [(1, 2), (4, 4), (5, 7), (7, 100)]
+14. clear()
+Phương thức này có tác dụng xóa bỏ hết tất cả các phần tử trong list.
+Cú pháp:
+mylist.clear()
+Trong đó,  mylist là list mà bạn muốn xóa bỏ hết phần tử.
+VD:
+list = ['A', 'C', 'B', 'E', 'D']
+
+list.clear()
+print(list)
+# Kết quả: []
