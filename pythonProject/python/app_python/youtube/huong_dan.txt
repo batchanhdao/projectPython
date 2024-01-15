@@ -1,5 +1,0 @@
-cài đặt thư viện: 
-    pip install pytube
-    pip install py2exe
-
-app: đi đến thư mục chứa file gõ lệnh python setup.py py2exe vào cmd

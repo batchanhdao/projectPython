@@ -1,4 +1,0 @@
-b1: cài đặt Tesseract-OCR
-b2: cài đặt thư viện
-    pip install pytesseract
-    pip install opencv-python
