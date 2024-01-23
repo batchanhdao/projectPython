@@ -3,8 +3,6 @@ import os
 
 # Thiết lập thư mục làm việc
 working_directory = os.getcwd()
-os.chdir(working_directory)
-
 
 # Hàm download_video(stream) nhận một đối tượng stream và thực hiện việc tải video dựa trên stream đó.
 def download_video(stream):
@@ -30,6 +28,7 @@ def go_to_folder(name_folder=""):
 # Hàm main() là hàm chính của chương trình, thực hiện quá trình chọn và tải video từ YouTube.
 def main():
     while True:
+        os.chdir(working_directory)
         # Hiển thị thông điệp hướng dẫn để người dùng nhập URL video hoặc 'ex' để kết thúc chương trình.
         print("Click Share on Youtube to get URL")
         video_url = input("ENTER VIDEO URL or 'ex' to END: ").strip()
@@ -79,14 +78,10 @@ def main():
                 # Xử lý ngoại lệ nếu có lỗi xảy ra trong quá trình xử lý lựa chọn
                 print("Error:", e)
 
+
 # Kiểm tra nếu đây là file chính và chạy hàm main()
 if __name__ == "__main__":
     print(f"Current working directory: {working_directory}")
-    # main()
-    yt = pytube.YouTube(
-        'https://www.youtube.com/watch?v=CEg6lJQDQp4',
-        use_oauth=True,
-        allow_oauth_cache=True
-    )
-    stream = yt.streams.get_audio_only()
-    stream.download()
+    main()
+    
+    
