@@ -3,7 +3,8 @@ import pytube
 import os
 
 # Thiết lập thư mục làm việc
-working_directory = os.getcwd()
+# working_directory = os.getcwd()
+working_directory = r'D:\pythonProject\python\app_python\youtube\download_video'
 
 # Hàm download_video(stream) nhận một đối tượng stream và thực hiện việc tải video dựa trên stream đó.
 def download_video(stream):
@@ -26,8 +27,10 @@ def go_to_folder(name_folder=""):
         os.makedirs(folder_path)
     os.chdir(folder_path)
 
+
 # Hàm main() là hàm chính của chương trình, thực hiện quá trình chọn và tải video từ YouTube.
 def main():
+    
     while True:
         os.chdir(working_directory)
         urls = []
@@ -39,12 +42,11 @@ def main():
             if video_url == 'ex':
                 return
             elif video_url == 'ok':
-                print("-----------urls:--------")
-                print("\n".join(urls))
                 break
             else:
                 urls.append(video_url)
-
+        print("-----------urls:--------")
+        print("\n".join(urls))
         # Hiển thị các lựa chọn cho người dùng
         print("""Options: 
             '1' to get audio

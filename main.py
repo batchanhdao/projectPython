@@ -12,5 +12,10 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
+    with open('Untitled-1.txt', 'r') as file:
+        lines = file.readlines()
+        # lines = [line.strip() for line in file.readlines()]
+    print(lines)
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
