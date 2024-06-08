@@ -37,18 +37,19 @@ class FileRename(Folder):
     #     super().__init__(path)
 
     # add text to name file, create new name, danh so auto, cut name
-    def create_new_name(self, name_new, vi_tri_add_text: int = 1, number_start=1, len_number=4):
+    def create_new_name(self, new_name, vi_tri_add_text: int = 1, number_start=1, len_number=4):
         for file in self.files:
             if os.path.isdir(os.path.join(self.path, file)):
                 continue
             name_old = file
             name, extension = os.path.splitext(file)
-            text = Text().create_number(number_start=number_start, len_number=len_number)
+            text = Text()
+            text = text.create_number(number_start=number_start, len_number=len_number)
             number_start+=1
-            add_name = AddNameFile(name=name_new, extension=extension)
+            add_name = AddNameFile(name=new_name, extension=extension)
             name_new = add_name.add_on_name(text=text, place=vi_tri_add_text)
             name_new = f"{name_new}{extension}"
-            return self.rename(self.path, name_old, name_new)
+            self.rename(self.path, name_old, name_new)
     
     def add_text_to_name(self, text, vi_tri_add_text: int = 1):
         for file in self.files:
@@ -59,7 +60,7 @@ class FileRename(Folder):
             add_name = AddNameFile(name=name, extension=extension)
             name_new = add_name.add_on_name(text=text, place=vi_tri_add_text)
             name_new = f"{name_new}{extension}"
-            return self.rename(self.path, name_old, name_new)
+            self.rename(self.path, name_old, name_new)
         
     def cut_name_in_file(self, vi_tri_cut_name = {'bat_dau': None, 'ket_thuc': None}): 
         for file in self.files:
@@ -71,7 +72,7 @@ class FileRename(Folder):
             if vi_tri_cut_name['bat_dau'] and vi_tri_cut_name['ket_thuc']:
                 name = cut_name.cut_name(vi_tri_cut_name['bat_dau'], vi_tri_cut_name['ket_thuc'])
             name_new = f"{name}{extension}"
-            return self.rename(self.path, name_old, name_new)
+            self.rename(self.path, name_old, name_new)
     
     def auto_number(self, vi_tri_add_text, number_start=1, len_number=4):
         for file in self.files:
@@ -84,7 +85,7 @@ class FileRename(Folder):
             name_new = add_name.add_on_name(text=text, place=vi_tri_add_text)
             number_start+=1
             name_new = f"{name_new}{extension}"
-            return self.rename(self.path, name_old, name_new)
+            self.rename(self.path, name_old, name_new)
 
 
     def edit_files_in_folders_con(self, vi_tri_cut_name = {'bat_dau': None, 'ket_thuc': None}, vi_tri_add_text: int = 1, number_start=1, len_number=4):
@@ -101,18 +102,18 @@ class FileRename(Folder):
                 if vi_tri_cut_name['bat_dau'] and vi_tri_cut_name['ket_thuc']:
                     name = cut_name.cut_name(vi_tri_cut_name['bat_dau'], vi_tri_cut_name['ket_thuc'])
                 text = Text().create_char_and_number(char=ALPHA[alpha_id], number_start=number, len_number=len_number)
+                number+=1
                 add_name = AddNameFile(name=name, extension=extension)
                 name_new = add_name.add_on_name(text=text, place=vi_tri_add_text)
-                number+=1
                 name_new = f"{name_new}{extension}"
-                print(self.rename(folder_path, name_old, name_new))
+                self.rename(folder_path, name_old, name_new)
             alpha_id+=1
 
 
     def rename(self, folder_path, name_old, name_new):
         try:
-            # os.rename(os.path.join(folder_path, name_old), os.path.join(folder_path, name_new))
-            print(f"Success rename file: {name_old} to {name_new}")
+            os.rename(os.path.join(folder_path, name_old), os.path.join(folder_path, name_new))
+            print(f"Success rename file: '{name_old}' -> '{name_new}'")
             return True
         except Exception as e:
             print(e)
@@ -135,7 +136,7 @@ class NameFile():
         return f'name: {self.name} - extension: {self.extension}'
     
 class CutNameFile(NameFile):
-    # start: 1, lấy từ vị trí bat_dau
+    # start: 1, lấy từ >= vị trí bat_dau, <= vị trí ket_thuc
     def cut_name(self, bat_dau: int, ket_thuc: int) -> str:
         name = self.name
         if bat_dau > ket_thuc:
@@ -175,6 +176,8 @@ class Text():
         pass
 
     def create_char_and_number(self, char: str, number_start=1, len_number=4):
+        if number_start < 1:
+            number_start = 1
         text = str(number_start)
         while(len(text) < len_number):
             text = '0' + text
@@ -182,10 +185,11 @@ class Text():
         return text
     
     def create_number(self, number_start=1, len_number=4):
+        if number_start < 1:
+            number_start = 1
         text = str(number_start)
         while(len(text) < len_number):
             text = '0' + text
-        text = f'{text}'
         return text
         
 
