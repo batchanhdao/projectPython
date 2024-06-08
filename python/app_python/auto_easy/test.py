@@ -141,7 +141,35 @@ class MoveFileByExtension(Folder):
                 os.remove(os.path.join(move_path, extension, file))
             os.rename(os.path.join(self.path, file), os.path.join(move_path, extension, file))
 
-path = 'D:/test'
+# path = 'D:/test'
 
-move = MoveFileByExtension(path)
-move.move_files('D:/test1')
+# move = MoveFileByExtension(path)
+# move.move_files('D:/test1')
+
+class Text():
+    def __init__(self) -> None:
+        pass
+
+    def char_and_number_auto_tang(self, char: str, number_start=1, len_number=4):
+        text = str(number_start)
+        while(len(text) < len_number):
+            text = '0' + text
+        text = f'{char}{text}_'
+        return text
+    
+    def number_auto_tang(self, number_start=1, len_number=4):
+        text = str(number_start)
+        while(len(text) < len_number):
+            text = '0' + text
+        text = f'{text}_'
+        return text
+    
+# t = Text()
+# print(t.char_and_number_auto_tang('a', 4, 6))
+# print(t.number_auto_tang(1, 4))
+
+a = '0001_'
+if a.isdigit():
+    print('ok')
+else:
+    print('no')

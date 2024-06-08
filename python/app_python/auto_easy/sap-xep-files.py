@@ -1,7 +1,7 @@
 from abc import abstractmethod
 import os
-mô tả nghiệp vụ move file, 
 # Path: python/app_python/auto_easy/sap-xep-files.py
+# update file in folder cha/con/both
 ALPHA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 NUMBER = '0123456789'
 class Folder:
@@ -32,12 +32,64 @@ class Folder:
         for folder in self.folders:
             print(folder)
 
-class FileRename():
+class FileRename(Folder):
 
     # def __init__(self, path):
     #     super().__init__(path)
-    def rename_files(self, folder_path, name_old, name_new):
-        os.rename(os.path.join(folder_path, name_old), os.path.join(folder_path, name_new))
+    def edit_files_in_folders_con(self, vi_tri_cut_name = {'bat_dau': None, 'ket_thuc': None}, vi_tri_add_text: int = 1, number_start=1, len_number=4):
+        alpha_id = 0
+        for folder in self.folders:
+            folder_path = os.path.join(self.path, folder)
+            number = number_start
+            for file in os.listdir(folder_path):
+                if os.path.isdir(os.path.join(folder_path, file)):
+                    continue
+                name_old = file
+                name, extension = os.path.splitext(file)
+                cut_name = CutNameFile(name=name, extension=extension)
+                if vi_tri_cut_name['bat_dau'] and vi_tri_cut_name['ket_thuc']:
+                    name = cut_name.cut_name(vi_tri_cut_name['bat_dau'], vi_tri_cut_name['ket_thuc'])
+                text = Text().create_char_and_number(char=ALPHA[alpha_id], number_start=number, len_number=len_number)
+                add_name = AddNameFile(name=name, extension=extension)
+                name = add_name.add_on_name(text=text, place=vi_tri_add_text)
+                number+=1
+                name_new = f"{name}{extension}"
+                print(self.__rename_file(folder_path, name_old, name_new))
+            alpha_id+=1
+
+
+    def edit_files_in_folder_cha(self, vi_tri_cut_name = {'bat_dau': None, 'ket_thuc': None}, vi_tri_add_text: int = 1, number_start=1, len_number=4):
+        for file in self.files:
+            name_old = file
+            name, extension = os.path.splitext(file)
+            cut_name = CutNameFile(name=name, extension=extension)
+            if vi_tri_cut_name['bat_dau'] and vi_tri_cut_name['ket_thuc']:
+                name = cut_name.cut_name(vi_tri_cut_name['bat_dau'], vi_tri_cut_name['ket_thuc'])
+            text = Text().create_number(number_start=number_start, len_number=len_number)
+            add_name = AddNameFile(name=name, extension=extension)
+            name = add_name.add_on_name(text=text, place=vi_tri_add_text)
+            number_start+=1
+            name_new = f"{name}{extension}"
+            print(self.__rename_file(self.path, name_old, name_new))
+
+    def rename_files(self, name_new, vi_tri_add_text: int = 1, number_start=1, len_number=4):
+        for file in self.files:
+            name_old = file
+            name, extension = os.path.splitext(file)
+            text = Text().create_number(number_start=number_start, len_number=len_number)
+            add_name = AddNameFile(name=name_new, extension=extension)
+            name_new = add_name.add_on_name(text=text, place=vi_tri_add_text)
+            number_start+=1
+            name_new = f"{name_new}{extension}"
+            print(self.__rename_file(self.path, name_old, name_new))
+
+    def __rename_file(self, folder_path, name_old, name_new):
+        # os.rename(os.path.join(folder_path, name_old), os.path.join(folder_path, name_new))
+        return f"Success rename file: {name_old} to {name_new}"
+
+class FolderUpdate(Folder):
+    def __init__(self, path):
+        super().__init__(path)
 
 class FolderRename():
 
@@ -135,8 +187,7 @@ class CutNameFile(NameFile):
     def cut_name(self, bat_dau: int, ket_thuc: int) -> str:
         name = self.name
         if bat_dau > ket_thuc:
-            bat_dau = 1
-            ket_thuc = len(name)
+            return name
         if bat_dau <= 0:
             bat_dau = 1
         if ket_thuc >= len(name):
@@ -167,42 +218,157 @@ class AddNameFile(NameFile):
 
         return name
 
-    
+class Text():
+    def __init__(self) -> None:
+        pass
 
+    def create_char_and_number(self, char: str, number_start=1, len_number=4):
+        text = str(number_start)
+        while(len(text) < len_number):
+            text = '0' + text
+        text = f'{char}{text}_'
+        return text
+    
+    def create_number(self, number_start=1, len_number=4):
+        text = str(number_start)
+        while(len(text) < len_number):
+            text = '0' + text
+        text = f'{text}_'
+        return text
+        
 
 path = 'D:/test'
 
-group = GroupFileByExtension(path)
-group.group_files()
+# group = GroupFileByExtension(path)
+# group.group_files()
 folder_cha = Folder(path)
 folders_con = folder_cha.folders
-i=1
-for folder in folders_con:
-    folder_con_path = os.path.join(folder_cha.path, folder)
-    for file in os.listdir(folder_con_path):
-        old_name = file
-        name, extension = os.path.splitext(file)
-        # extension = str(extension).strip()
-
-        cut_name = CutNameFile(name=name, extension=extension)
-        name = cut_name.cut_name(6,60)
-
-        text =f"{i}"
-
-        while len(text) < 4:
-            text = '0' + text 
-        text = f'I{text}_'
-
-        add_name = AddNameFile(name=name, extension=extension)
-        name = add_name.add_on_before_name(text=text)
-
-        new_name = f"{name}{extension}"
-        print(new_name)
-        rename_file = FileRename()
-        # rename_file.rename_files_in_folders_con(folder_con_path, old_name, new_name)
-        # os.rename(os.path.join(folder_con_path, file), os.path.join(folder_con_path, new_name))
-        i+=1
 
 # folder.show_files()
 # folder.show_folders()
 
+class SelectAction():
+    def __init__(self) -> None:
+        pass
+
+    def select_action(self):
+        print("Select action:")
+        print("1. Group file by extension")
+        print("2. Group file by first letter")
+        print("3. Group file by date download")
+        print("4. Move file by extension")
+        print("5. Rename files")
+        print("6. Edit files in folder")
+        print("7. Edit files in folders con")
+        print("8. Exit")
+        action = input("Select action: ").strip()
+        return action
+    
+class Path():
+    def __init__(self) -> None:
+        pass
+
+    def get_path(self) -> str:
+        path = ''
+        while True:
+            try:
+                path = input("Enter path: ").strip()
+                path = os.path.normpath(path)
+                check_path = os.path.exists(path)
+                if not check_path:
+                    print("Path not found")
+                    print("Please enter path again")
+                else:
+                    break
+            except Exception as e:
+                print("Error Path Format:", e)
+                print("Please enter path again")
+        return path
+    
+class Input():
+    def __init__(self) -> None:
+        pass
+
+    def get_input(self, messenge) -> str:
+        text = input('NHAP "ex" TO END or ' + messenge).strip()
+        if text == 'ex':
+            exit()
+        return text
+    
+class InputCut():
+    def get_input(self) -> dict:
+        result = {"bat_dau": None, "ket_thuc": None}
+        text = input('Nhap "no" To Pass or Cut "start, end": ').strip()
+        if text == 'no':
+            return result
+        text = text.split(',')
+        if len(text) != 2:
+            return result
+        if not text[0].isdigit() or not text[1].isdigit():
+            return result
+        result['bat_dau'] = int(text[0])
+        result['ket_thuc'] = int(text[1])
+        return result
+
+class InputAdd():
+    def get_input(self) -> int:
+        text = input('Add "vi tri": ').strip()
+        if not text.isdigit():
+            return 1
+        return int(text)
+
+class Main():
+    def __init__(self) -> None:
+        pass
+
+    def get_path(self):
+        path = Path()
+        return path.get_path()
+
+    def get_action(self):
+        select_action = SelectAction()
+        return select_action.select_action()
+
+if __name__ == '__main__':
+    main = Main()
+    path = main.get_path()
+    nhap = Input()
+
+    while True:
+        input_cut = InputCut()
+        input_add = InputAdd()
+        action = main.get_action()
+        print(main.action)
+        if action == '1':
+            group = GroupFileByExtension(path)
+            group.group_files()
+        elif action == '2':
+            group = GroupFileByFirstLetter(path)
+            group.group_files()
+        elif action == '3':
+            group = GroupFileByDateDownload(path)
+            group.group_files()
+        elif action == '4':
+            move = MoveFileByExtension(path)
+            move.move_files('D:/test1')
+        elif action == '5':
+            file = FileRename(path)
+            name_new = nhap.get_input('Enter name new: ')
+            vi_tri_add_text = input_add.get_input()
+            file.rename_files(name_new, vi_tri_add_text=vi_tri_add_text)
+        elif action == '6':
+            file = FileRename(path)
+            vi_tri_cut_name = input_cut.get_input()
+            vi_tri_add_text = input_add.get_input()
+            file.edit_files_in_folder_cha(vi_tri_cut_name=vi_tri_cut_name, vi_tri_add_text=vi_tri_add_text)
+        elif action == '7':
+            file = FileRename(path)
+            vi_tri_cut_name = input_cut.get_input()
+            vi_tri_add_text = input_add.get_input()
+            file.edit_files_in_folders_con(vi_tri_cut_name=vi_tri_cut_name, vi_tri_add_text=vi_tri_add_text)
+        elif action == '8':
+            print("Exit")
+            break
+        else:
+            print("Action not found")
+            print("Please select action again")
