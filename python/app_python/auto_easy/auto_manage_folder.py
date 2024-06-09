@@ -1,9 +1,10 @@
 import os
 import shutil
-from input_type import InputText, InputCut, InputAdd, InputAutoNumber
+from input_type import InputText, InputCut, InputAdd, InputAutoNumber, EXIT, check_exit
 from group_type import GroupFileByExtension, GroupFileByFirstLetter, GroupFileByDateDownload
 from change_file import FileRename
 from move_file import MoveFileByExtension
+
 
 class SelectAction():
     def __init__(self) -> None:
@@ -32,6 +33,9 @@ class Path():
         while True:
             try:
                 path = input("Enter path: ").strip()
+                check_exit.is_exit(path)
+                if check_exit.exit == True: 
+                    break
                 path = os.path.normpath(path)
                 check_path = os.path.exists(path)
                 if not check_path:
@@ -57,59 +61,86 @@ class Main():
         return select_action.select_action()
 
 if __name__ == '__main__':
-    main = Main()
-    path = main.get_path()
-
     while True:
-        nhap = InputText()
-        input_cut = InputCut()
-        input_add = InputAdd()
-        input_auto_number = InputAutoNumber()
-        action = main.get_action()
-        print("action: ", action)
-        if action == '1':
-            group = GroupFileByExtension(path)
-            group.group_files()
-        elif action == '2':
-            group = GroupFileByFirstLetter(path)
-            group.group_files()
-        elif action == '3':
-            group = GroupFileByDateDownload(path)
-            group.group_files()
-
-        elif action == '4':
-            file = FileRename(path)
-            new_name = nhap.get_input('Enter name new: ')
-            number = input_auto_number.get_input()
-            vi_tri_add_text = input_add.get_input()
-            file.create_new_name(new_name=new_name, vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
-        elif action == '5':
-            file = FileRename(path)
-            vi_tri_cut_name = input_cut.get_input()
-            file.cut_name_in_file(vi_tri_cut_name=vi_tri_cut_name)
-        elif action == '6':
-            file = FileRename(path)
-            text = nhap.get_input('Enter text: ')
-            vi_tri_add_text = input_add.get_input()
-            file.add_text_to_name(text=text, vi_tri_add_text=vi_tri_add_text)
-        elif action == '7':
-            file = FileRename(path)
-            number = input_auto_number.get_input()
-            vi_tri_add_text = input_add.get_input()
-            file.auto_number(vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
-        elif action == '8':
-            file = FileRename(path)
-            vi_tri_cut_name = input_cut.get_input()
-            number = input_auto_number.get_input()
-            vi_tri_add_text = input_add.get_input()
-            file.edit_files_in_folders_con(vi_tri_cut_name=vi_tri_cut_name, vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
-        
-        elif action == '0':
+        print("Auto Manage Folder")
+        print("Input 'exit' to exit")
+        main = Main()
+        path = main.get_path()
+        if check_exit.exit == True:
+            check_exit.exit = False
             print("Exit")
             break
-        else:
-            print("Action not found")
-            print("Please select action again")
+
+        while True:
+            input_text = InputText()
+            input_cut = InputCut()
+            input_add = InputAdd()
+            input_auto_number = InputAutoNumber()
+            action = main.get_action()
+            print("action: ", action)
+            if action == '1':
+                group = GroupFileByExtension(path)
+                group.group_files()
+            elif action == '2':
+                group = GroupFileByFirstLetter(path)
+                group.group_files()
+            elif action == '3':
+                group = GroupFileByDateDownload(path)
+                group.group_files()
+
+            elif action == '4':
+                file = FileRename(path)
+                new_name = input_text.get_input('Enter name new: ')
+                number = input_auto_number.get_input()
+                vi_tri_add_text = input_add.get_input()
+                if check_exit.exit == True:
+                    check_exit.exit = False
+                    print("Exit")
+                    break
+                file.create_new_name(new_name=new_name, vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
+            elif action == '5':
+                file = FileRename(path)
+                vi_tri_cut_name = input_cut.get_input()
+                if check_exit.exit == True:
+                    check_exit.exit = False
+                    print("Exit")
+                    break
+                file.cut_name_in_file(vi_tri_cut_name=vi_tri_cut_name)
+            elif action == '6':
+                file = FileRename(path)
+                text = input_text.get_input('Enter text: ')
+                vi_tri_add_text = input_add.get_input()
+                if check_exit.exit == True:
+                    check_exit.exit = False
+                    print("Exit")
+                    break
+                file.add_text_to_name(text=text, vi_tri_add_text=vi_tri_add_text)
+            elif action == '7':
+                file = FileRename(path)
+                number = input_auto_number.get_input()
+                vi_tri_add_text = input_add.get_input()
+                if check_exit.exit == True:
+                    check_exit.exit = False
+                    print("Exit")
+                    break
+                file.auto_number(vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
+            elif action == '8':
+                file = FileRename(path)
+                vi_tri_cut_name = input_cut.get_input()
+                number = input_auto_number.get_input()
+                vi_tri_add_text = input_add.get_input()
+                if check_exit.exit == True:
+                    check_exit.exit = False
+                    print("Exit")
+                    break
+                file.edit_files_in_folders_con(vi_tri_cut_name=vi_tri_cut_name, vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
+            
+            elif action == '0':
+                print("Exit")
+                break
+            else:
+                print("Action not found")
+                print("Please select action again")
 
 
 # from change_file import ChangeFile
