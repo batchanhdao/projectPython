@@ -3,7 +3,6 @@ import shutil
 from input_type import InputText, InputCut, InputAdd, InputAutoNumber, EXIT, check_exit
 from group_type import GroupFileByExtension, GroupFileByFirstLetter, GroupFileByDateDownload
 from change_file import FileRename
-from move_file import MoveFileByExtension
 
 
 class SelectAction():
