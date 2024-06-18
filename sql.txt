@@ -1,0 +1,32 @@
+08:38:14	ANALYZE TABLE `bth`.`room`	OK	0.000 sec
+
+08:29:04	CREATE INDEX `idx_room_name_type`  ON `bth`.`room` (name, type) COMMENT '' ALGORITHM DEFAULT LOCK DEFAULT	OK	0.000 sec
+
+08:29:09	ALTER TABLE `bth`.`room` ALTER INDEX `idx_room_name_type` INVISIBLE	OK	0.000 sec
+
+08:29:19	ALTER TABLE `bth`.`room` ALTER INDEX `idx_room_name_type` VISIBLE	OK	0.000 sec
+
+08:29:24	DROP INDEX `idx_room_name_type` ON `bth`.`room`	OK	0.000 sec
+
+câu lệnh sql để xem thông tin các cột trong bảng
+SHOW COLUMNS FROM `bth`.`room`;
+thêm sửa xóa các cột
+ALTER TABLE `bth`.`room` 
+ADD COLUMN `name` VARCHAR(45) NULL AFTER `type`;
+
+ALTER TABLE `bth`.`room` 
+CHANGE COLUMN `name` `anh` VARCHAR(45) NULL DEFAULT NULL ;
+
+ALTER TABLE `bth`.`room` 
+DROP COLUMN `anh`;
+
+thêm và xóa partitioning
+grants là gì và privileges là gì/ cách xem danh sách người dùng, thêm sửa xóa người dùng, Phân quyền cho user
+
+View là các truy vấn SELECT được lưu lại như là một table và sau đó ta có thể truy vấn dữ liệu từ view như thực hiện với table.
+CREATE VIEW demodb.testview
+AS 
+select Mentor.Hoten, SVTT.MSSV, SVTT.Gioitinh
+from Mentor
+inner join SVTT
+on Mentor.MentorID = SVTT.MentorID; 
