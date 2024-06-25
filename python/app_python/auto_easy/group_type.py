@@ -1,12 +1,22 @@
 import os
 import shutil
+from abc import ABC, abstractmethod
 from change_file import Folder
 
-# nhóm file theo đuôi: 
-class GroupFileByExtension(Folder):
-    def __init__(self, path):
+class GroupFile(Folder):
+    def __init__(self, path, logger=None):
         super().__init__(path)
-        self.group_files()
+        self.logger = logger
+
+    @abstractmethod
+    def group_files(self):
+        pass
+
+
+# nhóm file theo đuôi: 
+class GroupFileByExtension(GroupFile):
+    def __init__(self, path, logger=None):
+        super().__init__(path, logger)
 
     def group_files(self):
         for file in self.files:
@@ -15,15 +25,15 @@ class GroupFileByExtension(Folder):
                 os.mkdir(os.path.join(self.path, extension))
             try:
                 shutil.move(os.path.join(self.path, file), os.path.join(self.path, extension, file))
+                self.logger.write(f'Move file {file} to folder {extension}')
                 # os.rename(os.path.join(self.path, file), os.path.join(self.path, extension, file))
             except Exception as e:
-                print(f'Error: {file}', e)
+                self.logger.write(f'Error: {file}', e)
 
 # nhóm file theo ky tu dau tien: tạo thư mục theo ky tu dau tien và di chuyen file vào thư mục đó
-class GroupFileByFirstLetter(Folder):
-    def __init__(self, path):
-        super().__init__(path)
-        self.group_files()
+class GroupFileByFirstLetter(GroupFile):
+    def __init__(self, path, logger=None):
+        super().__init__(path, logger)
 
     def group_files(self):
         for file in self.files:
@@ -34,16 +44,16 @@ class GroupFileByFirstLetter(Folder):
 
             try:
                 shutil.move(os.path.join(self.path, file), os.path.join(self.path, first_letter, file))
+                self.logger.write(f'Move file {file} to folder {first_letter}')
                 # os.rename(os.path.join(self.path, file), os.path.join(self.path, first_letter, file))
             except Exception as e:
-                print(f'Error: {file}', e)
+                self.logger.write(f'Error: {file}', e)
    
 # nhóm file theo ngay download: tạo thư mục theo ngay download và di chuyen file vào thư mục đó
 from datetime import datetime
-class GroupFileByDateDownload(Folder):
-    def __init__(self, path):
-        super().__init__(path)
-        self.group_files()
+class GroupFileByDateDownload(GroupFile):
+    def __init__(self, path, logger=None):
+        super().__init__(path, logger)
 
     def group_files(self):
         for file in self.files:
@@ -55,7 +65,8 @@ class GroupFileByDateDownload(Folder):
                 os.mkdir(os.path.join(self.path, date))
             try:
                 shutil.move(os.path.join(self.path, file), os.path.join(self.path, date, file))
+                self.logger.write(f'Move file {file} to folder {date}')
                 # os.rename(os.path.join(self.path, file), os.path.join(self.path, date, file))
             except Exception as e:
-                print(f'Error: {file}', e)
+                self.logger.write(f'Error: {file}', e)
 

@@ -3,6 +3,7 @@ import shutil
 from input_type import InputText, InputCut, InputAdd, InputAutoNumber, EXIT, check_exit
 from group_type import GroupFileByExtension, GroupFileByFirstLetter, GroupFileByDateDownload
 from change_file import FileRename
+from logger import FileLogger
 
 
 class SelectAction():
@@ -48,8 +49,9 @@ class Path():
         return path
 
 class Main():
-    def __init__(self) -> None:
-        pass
+    def __init__(self, name_logger):
+        self.name_file_logger = 'log ' + str(name_logger) + '.txt'
+        self.logger = FileLogger(self.name_file_logger)
 
     def get_path(self):
         path = Path()
@@ -59,12 +61,17 @@ class Main():
         select_action = SelectAction()
         return select_action.select_action()
 
+from datetime import datetime
 if __name__ == '__main__':
+    date_time = datetime.now()
+    date_time_format = date_time.strftime("%Y-%m-%d %H-%M-%S")
     while True:
         print("Auto Manage Folder")
         print("Input 'exit' to exit")
-        main = Main()
+        print("Present Folder: ", os.getcwd())
+        main = Main(date_time_format)
         path = main.get_path()
+        logger = main.logger
         if check_exit.exit == True:
             check_exit.exit = False
             print("Exit")
@@ -77,18 +84,19 @@ if __name__ == '__main__':
             input_auto_number = InputAutoNumber()
             action = main.get_action()
             print("action: ", action)
+            logger.write(f"Action: {action} - Time: {date_time_format}")
             if action == '1':
-                group = GroupFileByExtension(path)
+                group = GroupFileByExtension(path, logger=logger)
                 group.group_files()
             elif action == '2':
-                group = GroupFileByFirstLetter(path)
+                group = GroupFileByFirstLetter(path, logger=logger)
                 group.group_files()
             elif action == '3':
-                group = GroupFileByDateDownload(path)
+                group = GroupFileByDateDownload(path, logger=logger)
                 group.group_files()
 
             elif action == '4':
-                file = FileRename(path)
+                file = FileRename(path, logger=logger)
                 new_name = input_text.get_input('Enter name new: ')
                 number = input_auto_number.get_input()
                 vi_tri_add_text = input_add.get_input()
@@ -98,7 +106,7 @@ if __name__ == '__main__':
                     break
                 file.create_new_name(new_name=new_name, vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
             elif action == '5':
-                file = FileRename(path)
+                file = FileRename(path, logger=logger)
                 vi_tri_cut_name = input_cut.get_input()
                 if check_exit.exit == True:
                     check_exit.exit = False
@@ -106,7 +114,7 @@ if __name__ == '__main__':
                     break
                 file.cut_name_in_file(vi_tri_cut_name=vi_tri_cut_name)
             elif action == '6':
-                file = FileRename(path)
+                file = FileRename(path, logger=logger)
                 text = input_text.get_input('Enter text: ')
                 vi_tri_add_text = input_add.get_input()
                 if check_exit.exit == True:
@@ -115,7 +123,7 @@ if __name__ == '__main__':
                     break
                 file.add_text_to_name(text=text, vi_tri_add_text=vi_tri_add_text)
             elif action == '7':
-                file = FileRename(path)
+                file = FileRename(path, logger=logger)
                 number = input_auto_number.get_input()
                 vi_tri_add_text = input_add.get_input()
                 if check_exit.exit == True:
@@ -124,7 +132,7 @@ if __name__ == '__main__':
                     break
                 file.auto_number(vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
             elif action == '8':
-                file = FileRename(path)
+                file = FileRename(path, logger=logger)
                 vi_tri_cut_name = input_cut.get_input()
                 number = input_auto_number.get_input()
                 vi_tri_add_text = input_add.get_input()

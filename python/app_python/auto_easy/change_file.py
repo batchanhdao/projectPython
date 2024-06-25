@@ -33,8 +33,9 @@ class Folder:
 
 class FileRename(Folder):
 
-    # def __init__(self, path):
-    #     super().__init__(path)
+    def __init__(self, path, logger=None):
+        super().__init__(path)
+        self.logger = logger
 
     # add text to name file, create new name, danh so auto, cut name
     def create_new_name(self, new_name, vi_tri_add_text: int = 1, number_start=1, len_number=4):
@@ -113,10 +114,11 @@ class FileRename(Folder):
     def rename(self, folder_path, name_old, name_new):
         try:
             os.rename(os.path.join(folder_path, name_old), os.path.join(folder_path, name_new))
-            print(f"Success rename file: '{name_old}' -> '{name_new}'")
+            self.logger.write(f"Success rename file: '{name_old}' -> '{name_new}'")
+            # print(f"Success rename file: '{name_old}' -> '{name_new}'")
             return True
         except Exception as e:
-            print(e)
+            self.logger.write(f'Error: ', e)
             return False
 
 class FolderRename():
