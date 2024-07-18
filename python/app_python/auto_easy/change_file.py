@@ -74,6 +74,17 @@ class FileRename(Folder):
                 name = cut_name.cut_name(vi_tri_cut_name['bat_dau'], vi_tri_cut_name['ket_thuc'])
             name_new = f"{name}{extension}"
             self.rename(self.path, name_old, name_new)
+            
+    def remove_text_in_name(self, vi_tri_remove_text = 1, len_remove_text = 0):
+        for file in self.files:
+            if os.path.isdir(os.path.join(self.path, file)):
+                continue
+            name_old = file
+            name, extension = os.path.splitext(file)
+            remove_name = RemoveNameFile(name=name, extension=extension)
+            name = remove_name.remove_text_in_name(vi_tri_remove_text=vi_tri_remove_text, len_remove_text=len_remove_text)
+            name_new = f"{name}{extension}"
+            self.rename(self.path, name_old, name_new)
     
     def auto_number(self, vi_tri_add_text, number_start=1, len_number=4):
         for file in self.files:
@@ -169,6 +180,22 @@ class AddNameFile(NameFile):
         else:
             name = name[0:place-1] + text + name[place-1:]
 
+        return name
+    
+class RemoveNameFile(NameFile):
+    
+    def remove_text_in_name(self, vi_tri_remove_text = 1, len_remove_text = 0):
+        name = self.name
+        if vi_tri_remove_text < 0 or len_remove_text <= 0:
+            return name
+        if vi_tri_remove_text > len(name):
+            return name
+        if vi_tri_remove_text == 0:
+            name = name[0: len(name) - len_remove_text]
+        if vi_tri_remove_text > 0:
+            if vi_tri_remove_text + len_remove_text - 1 > len(name):
+                len_remove_text = len(name) - vi_tri_remove_text + 1
+            name = name[0: vi_tri_remove_text - 1] + name[vi_tri_remove_text + len_remove_text - 1:]
         return name
 
 class Text():

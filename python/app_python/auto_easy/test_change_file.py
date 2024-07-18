@@ -107,6 +107,33 @@ class TestText(unittest.TestCase):
         result = text.create_number(0)
         self.assertEqual(result, '0001')
 
+    
+
+from change_file import RemoveNameFile
+
+class TestRemoveNameFile(unittest.TestCase):
+    def test_remove_text_in_name(self):
+        file = RemoveNameFile(name="example_file", extension=".txt")
+
+        # Test removing text at position 1 with length 3
+        result = file.remove_text_in_name(vi_tri_remove_text=1, len_remove_text=3)
+        self.assertEqual(result, "mple_file")
+
+        # Test removing text at position 5 with length 2
+        result = file.remove_text_in_name(vi_tri_remove_text=5, len_remove_text=2)
+        self.assertEqual(result, "examle_file")
+
+        # Test removing text at position 10 with length 4
+        result = file.remove_text_in_name(vi_tri_remove_text=10, len_remove_text=4)
+        self.assertEqual(result, "example_f")
+
+        # Test removing text at position 2 with length 0
+        result = file.remove_text_in_name(vi_tri_remove_text=2, len_remove_text=0)
+        self.assertEqual(result, "example_file")
+
+        # Test removing text at position 8 with length 6 (out of range)
+        result = file.remove_text_in_name(vi_tri_remove_text=8, len_remove_text=6)
+        self.assertEqual(result, "example_file")
 
 if __name__ == '__main__':
     unittest.main()
