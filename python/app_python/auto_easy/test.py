@@ -1,100 +1,48 @@
-
 import os
 import shutil
+from mutagen.mp3 import MP3
+from mutagen.id3 import ID3, TIT2, TALB
 from change_file import Folder
 
+path ='D:\\music\\loa pháp thoại\\003 đức đạt lai lạc ma'
+path = os.path.normpath(path)
+folder_ob = Folder(path)
+print(folder_ob.folders)
 
-class Path():
-    def __init__(self) -> None:
-        pass
+folders = folder_ob.folders
+for folder in folders:
+    path_folder = os.path.join(path, folder)
+    folder_ob = Folder(path_folder)
+    print(folder_ob.files)
+    for file in folder_ob.files:
+        file_path = os.path.join(path_folder, file)
+        name, extension = os.path.splitext(file)
+        audio = MP3(file_path, ID3=ID3)
+        if audio.tags is None:
+            audio.add_tags()
+        audio.tags.add(TIT2(encoding=3, text=name))
+        audio.tags.add(TALB(encoding=3, text='Duc Dat Lai Lac Ma'))
+        audio.save()
+        print("Metadata updated successfully.")
 
-    def get_path(self) -> str:
-        path = ''
-        while True:
-            try:
-                path = input("Enter path: ").strip()
-                path = os.path.normpath(path)
-                check_path = os.path.exists(path)
-                if not check_path:
-                    print("Path not found")
-                    print("Please enter path again")
-                else:
-                    break
-            except Exception as e:
-                print("Error Path Format:", e)
-                print("Please enter path again")
-        return path
-path = Path().get_path()
-    
-# nhóm file theo đuôi: 
-class GroupFileByExtension(Folder):
-    def __init__(self, path):
-        super().__init__(path)
-        self.group_files()
+# # Đường dẫn đến file MP3 của bạn
+# file_path = 'example.mp3'
 
-    def group_files(self):
-        for file in self.files:
-            name, extension = os.path.splitext(file)
-            if not os.path.exists(os.path.join(self.path, extension)):
-                os.mkdir(os.path.join(self.path, extension))
-            try:
-                shutil.move(os.path.join(self.path, file), os.path.join(self.path, extension, file))
-                # os.rename(os.path.join(self.path, file), os.path.join(self.path, extension, file))
-            except Exception as e:
-                print(f'Error: {file}', e)
+# # Mở file MP3
+# audio = MP3(file_path, ID3=ID3)
 
-# group = GroupFileByExtension(path)
-# group.group_files()
+# # Thêm thẻ ID3 nếu chưa có
+# if audio.tags is None:
+#     audio.add_tags()
 
-# nhóm file theo ky tu dau tien: tạo thư mục theo ky tu dau tien và di chuyen file vào thư mục đó
-class GroupFileByFirstLetter(Folder):
-    def __init__(self, path):
-        super().__init__(path)
-        self.group_files()
+# # Thay đổi title và album
+# audio.tags.add(TIT2(encoding=3, text='My New Title'))
+# audio.tags.add(TALB(encoding=3, text='My New Album'))
 
-    def group_files(self):
-        for file in self.files:
-            name, extension = os.path.splitext(file)
-            first_letter = str(name[0]).upper()
-            if not os.path.exists(os.path.join(self.path, first_letter)):
-                os.mkdir(os.path.join(self.path, first_letter))
+# # Lưu thay đổi
+# audio.save()
 
-            try:
-                shutil.move(os.path.join(self.path, file), os.path.join(self.path, first_letter, file))
-                # os.rename(os.path.join(self.path, file), os.path.join(self.path, first_letter, file))
-            except Exception as e:
-                print(f'Error: {file}', e)
-            
-# group = GroupFileByFirstLetter(path)
-# group.group_files()
+# print("Metadata updated successfully.")
 
-# nhóm file theo ngay download: tạo thư mục theo ngay download và di chuyen file vào thư mục đó
-from datetime import datetime
-class GroupFileByDateDownload(Folder):
-    def __init__(self, path):
-        super().__init__(path)
-        self.group_files()
-
-    def group_files(self):
-        for file in self.files:
-            name, extension = os.path.splitext(file)
-            date = os.path.getctime(os.path.join(self.path, file))
-            date = datetime.fromtimestamp(date)
-            date = str(date).split(' ')[0].strip()
-            if not os.path.exists(os.path.join(self.path, date)):
-                os.mkdir(os.path.join(self.path, date))
-            try:
-                shutil.move(os.path.join(self.path, file), os.path.join(self.path, date, file))
-                # os.rename(os.path.join(self.path, file), os.path.join(self.path, date, file))
-            except Exception as e:
-                print(f'Error: {file}', e)
-
-# group = GroupFileByDateDownload(path)
-# group.group_files()
-vi_tri_cut_name = {"bat_dau": 1, "ket_thuc": None}
-if vi_tri_cut_name['bat_dau'] and vi_tri_cut_name['ket_thuc']:
-    print('ok')
-else:
-    print("no")
 
     

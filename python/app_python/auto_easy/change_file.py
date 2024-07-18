@@ -90,7 +90,6 @@ class FileRename(Folder):
 
 
     def edit_files_in_folders_con(self, vi_tri_cut_name = {'bat_dau': None, 'ket_thuc': None}, vi_tri_add_text: int = 1, number_start=1, len_number=4):
-        alpha_id = 0
         for folder in self.folders:
             folder_path = os.path.join(self.path, folder)
             number = number_start
@@ -102,13 +101,12 @@ class FileRename(Folder):
                 cut_name = CutNameFile(name=name, extension=extension)
                 if vi_tri_cut_name['bat_dau'] and vi_tri_cut_name['ket_thuc']:
                     name = cut_name.cut_name(vi_tri_cut_name['bat_dau'], vi_tri_cut_name['ket_thuc'])
-                text = Text().create_char_and_number(char=ALPHA[alpha_id], number_start=number, len_number=len_number)
+                text = Text().create_char_and_number(number_start=number, len_number=len_number)
                 number+=1
                 add_name = AddNameFile(name=name, extension=extension)
                 name_new = add_name.add_on_name(text=text, place=vi_tri_add_text)
                 name_new = f"{name_new}{extension}"
                 self.rename(folder_path, name_old, name_new)
-            alpha_id+=1
 
 
     def rename(self, folder_path, name_old, name_new):
@@ -177,13 +175,13 @@ class Text():
     def __init__(self) -> None:
         pass
 
-    def create_char_and_number(self, char: str, number_start=1, len_number=4):
+    def create_char_and_number(self, number_start=1, len_number=4):
         if number_start < 1:
             number_start = 1
         text = str(number_start)
         while(len(text) < len_number):
             text = '0' + text
-        text = f'{char}{text}'
+        text = text + "_"
         return text
     
     def create_number(self, number_start=1, len_number=4):
