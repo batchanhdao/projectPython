@@ -53,6 +53,27 @@ class InputCut(Input):
             return result
         except Exception as e:
             return result
+        
+class InputRemove(Input):
+    def get_input(self) -> dict:
+        result = {"vi_tri": 1, "so_ky_tu": 0}
+        text = input('Remove "vị trí, số ký tự muốn xóa": ').strip()
+        check_exit.is_exit(text)
+        try:
+            text = text.split(',')
+            if len(text) != 2:
+                return result
+            vi_tri = text[0].strip()
+            so_ky_tu = text[1].strip()
+            if not vi_tri.isdigit() or not so_ky_tu.isdigit():
+                return result
+            if int(vi_tri) < 1 or int(so_ky_tu) < 0:
+                return result
+            result['vi_tri'] = int(vi_tri)
+            result['so_ky_tu'] = int(so_ky_tu)
+            return result
+        except Exception as e:
+            return result
 
 class InputAdd(Input):
     def get_input(self) -> int:

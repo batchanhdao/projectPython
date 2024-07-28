@@ -65,24 +65,24 @@ class TestText(unittest.TestCase):
         text = Text()
         
         # Test creating text with character 'A' and number 1
-        result = text.create_char_and_number('A', 1)
-        self.assertEqual(result, 'A0001')
+        result = text.create_char_and_number(number_start=1)
+        self.assertEqual(result, '0001_')
 
         # Test creating text with character 'B' and number 10
-        result = text.create_char_and_number('B', 10)
-        self.assertEqual(result, 'B0010')
+        result = text.create_char_and_number(number_start=10)
+        self.assertEqual(result, '0010_')
 
         # Test creating text with character 'C' and number 100
-        result = text.create_char_and_number('C', 100)
-        self.assertEqual(result, 'C0100')
+        result = text.create_char_and_number(number_start=100)
+        self.assertEqual(result, '0100_')
 
         # Test creating text with character 'C', number 100, and length 3
-        result = text.create_char_and_number('C', 100, 3)
-        self.assertEqual(result, 'C100')
+        result = text.create_char_and_number(number_start=100, len_number=3)
+        self.assertEqual(result, '100_')
 
         # Test creating text with character 'C', number 0, and length 3
-        result = text.create_char_and_number('C', 0, 3)
-        self.assertEqual(result, 'C001')
+        result = text.create_char_and_number(number_start=0, len_number=3)
+        self.assertEqual(result, '001_')
 
     def test_create_number(self):
         text = Text()
@@ -121,7 +121,7 @@ class TestRemoveNameFile(unittest.TestCase):
 
         # Test removing text at position 5 with length 2
         result = file.remove_text_in_name(vi_tri_remove_text=5, len_remove_text=2)
-        self.assertEqual(result, "examle_file")
+        self.assertEqual(result, "exame_file")
 
         # Test removing text at position 10 with length 4
         result = file.remove_text_in_name(vi_tri_remove_text=10, len_remove_text=4)
@@ -133,7 +133,7 @@ class TestRemoveNameFile(unittest.TestCase):
 
         # Test removing text at position 8 with length 6 (out of range)
         result = file.remove_text_in_name(vi_tri_remove_text=8, len_remove_text=6)
-        self.assertEqual(result, "example_file")
+        self.assertEqual(result, "example")
 
 if __name__ == '__main__':
     unittest.main()

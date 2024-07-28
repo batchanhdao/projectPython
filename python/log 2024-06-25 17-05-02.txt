@@ -1,6 +1,0 @@
-Success rename file: 'anhCay-lich-su.zip' -> 'anhanhCay-lich-su.zip'
-Success rename file: 'anhChuyende-CNPM.ppt' -> 'anhanhChuyende-CNPM.ppt'
-Success rename file: 'anhDE9-10.docx' -> 'anhanhDE9-10.docx'
-Success rename file: 'anhHuu Phuc Do-HAN-AYFHWJ-SGN-FLIGHT_ORIGINATING.pdf' -> 'anhanhHuu Phuc Do-HAN-AYFHWJ-SGN-FLIGHT_ORIGINATING.pdf'
-Success rename file: 'anhPT phan mem huong dich vu_INT1448.pdf' -> 'anhanhPT phan mem huong dich vu_INT1448.pdf'
-Success rename file: 'anhValseFavorite.mp3' -> 'anhanhValseFavorite.mp3'

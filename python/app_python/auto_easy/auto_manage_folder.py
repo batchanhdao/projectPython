@@ -1,6 +1,6 @@
 import os
 import shutil
-from input_type import InputText, InputCut, InputAdd, InputAutoNumber, EXIT, check_exit
+from input_type import InputText, InputCut, InputAdd, InputAutoNumber, EXIT, check_exit, InputRemove
 from group_type import GroupFileByExtension, GroupFileByFirstLetter, GroupFileByDateDownload
 from change_file import FileRename
 from logger import FileLogger
@@ -20,6 +20,7 @@ class SelectAction():
         print("6. Add text in files")
         print("7. Auto number in files")
         print("8. Edit files in folders con")
+        print("9. Remove text in name files")
         print("0. Exit")
         action = input("Select action: ").strip()
         return action
@@ -82,6 +83,7 @@ if __name__ == '__main__':
             input_cut = InputCut()
             input_add = InputAdd()
             input_auto_number = InputAutoNumber()
+            input_remove = InputRemove()
             action = main.get_action()
             print("action: ", action)
             logger.write(f"Action: {action} - Time: {date_time_format}")
@@ -142,6 +144,15 @@ if __name__ == '__main__':
                     break
                 file.edit_files_in_folders_con(vi_tri_cut_name=vi_tri_cut_name, vi_tri_add_text=vi_tri_add_text, number_start=number['number_start'], len_number=number['len_number'])
             
+            elif action == '9':
+                file = FileRename(path, logger=logger)
+                iprm = input_remove.get_input()
+                if check_exit.exit == True:
+                    check_exit.exit = False
+                    print("Exit")
+                    break
+                file.remove_text_in_name(vi_tri_remove_text=iprm['vi_tri'], len_remove_text=iprm['so_ky_tu'])
+                
             elif action == '0':
                 print("Exit")
                 break
