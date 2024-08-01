@@ -53,7 +53,7 @@ class File:
         self.urls = urls
         
     def write(self):
-        file_name = f"info_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+        file_name = f"info_{datetime.now().strftime('%Y%m%d%H%M%S')}.txt"
         for url in self.urls:
             try:
                 with YoutubeDL() as ydl:

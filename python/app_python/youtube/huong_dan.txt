@@ -3,3 +3,4 @@ cài đặt thư viện:
     pip install py2exe
 
 app: đi đến thư mục chứa file gõ lệnh python setup.py py2exe vào cmd
+pyinstaller --onefile --icon=myicon.ico my_script.py
