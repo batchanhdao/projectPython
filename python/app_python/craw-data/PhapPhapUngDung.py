@@ -33,7 +33,7 @@ class StopNext:
                 return
 
     @staticmethod
-    def sleep_random(start=1, end=3, phay=2): # hàm random thời gian ngủ để qua khâu kiểm duyệt
+    def sleep_random(start=1, end=4, phay=2): # hàm random thời gian ngủ để qua khâu kiểm duyệt
         # start/end: random time from start -> end
         # phay: phần trăm của 1 số vd phay=2 -> 2.22
         phantram = 10**phay
@@ -96,6 +96,7 @@ class DownloadFileByWget(DownloadFile):
       try:
         path_save_file = os.path.join(self.path_folder_save_files, self.name_file)
         wget.download(self.url, path_save_file)
+        print()
         print(f"Downloaded: {path_save_file}")
       except Exception as e:
         print(e)
@@ -130,7 +131,9 @@ if __name__ == "__main__":
     service = Service(ChromeDriverManager().install())
 
     page_links = [
-        'https://phatphapungdung.com/sach-noi/101-quan-diem-kinh-doanh-se-thay-doi-cach-ban-lam-viec-189166.html',
+        # 'https://phatphapungdung.com/sach-noi/trang-nguyen-viet-nam-3-178484.html',
+        'https://phatphapungdung.com/the-buddha-cuoc-doi-duc-phat-121939.html',
+
     ]
     for page_link in page_links:
         try: 
@@ -142,10 +145,14 @@ if __name__ == "__main__":
             # get title, url audio
             content = soup.find('div', {'class': 'td-post-content'})
             # print(len(content)) - 1
-            title = content.find('h2').get_text()
-            informations = content.find('p').get_text()
+            try:
+                title = content.find('h2').get_text()
+            except:
+                title = page_link.split('/')[-1].split('.')[0]
+            # informations = content.find('p').get_text()
 
-            path_audiobooks = content.find('div', {'class': 'fp-playlist-external is-audio fv-playlist-design-2017 visible-captions fp-playlist-horizontal fp-playlist-has-captions skin-youtuby'})
+            # path_audiobooks = content.find('div', {'class': 'fp-playlist-external is-audio fv-playlist-design-2017 visible-captions fp-playlist-horizontal fp-playlist-has-captions skin-youtuby'})
+            path_audiobooks = content.find('div', {'class': 'fp-playlist-external fp-playlist-vertical fp-playlist-only-captions skin-youtuby'})
             path_audiobooks = path_audiobooks('a')
             # print('Title:', title)
             # print('Informations:', informations)
@@ -161,6 +168,7 @@ if __name__ == "__main__":
                 downloadFileOb.download_file()
                 # print(path_audiobook)
         except Exception as e:
+            print('Error:', page_link)
             print(e)
         finally:
             wd.quit()
