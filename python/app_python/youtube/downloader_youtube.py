@@ -122,6 +122,7 @@ def main():
                         print("Downloading audio...")
                         audio = Audio(urls=video_urls, preferredcodec=preferredcodec)
                         audio.download()
+                        video_urls.clear()
                         
                     elif option == '2':
                         go_to_folder('video')
@@ -134,6 +135,7 @@ def main():
                         print("Downloading video...")
                         video = Video(urls=video_urls, quality=quantity)
                         video.download()
+                        video_urls.clear()
                         
                     else:
                         # Hiển thị thông điệp nếu người dùng chọn một lựa chọn không hợp lệ

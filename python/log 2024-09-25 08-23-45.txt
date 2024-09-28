@@ -1,0 +1,22 @@
+Action: 5 - Time: 2024-09-25 08-23-45
+Success rename file: '00009_Bảy Đóa Sen Vàng Nâng Gót Ngọc 1.mp3' -> 'Bảy Đóa Sen Vàng Nâng Gót Ngọc 1.mp3'
+Success rename file: '00010_Bảy Đóa Sen Vàng Nâng Gót Ngọc 2.mp3' -> 'Bảy Đóa Sen Vàng Nâng Gót Ngọc 2.mp3'
+Success rename file: '00011_Bảy Đóa Sen Vàng Nâng Gót Ngọc 3.mp3' -> 'Bảy Đóa Sen Vàng Nâng Gót Ngọc 3.mp3'
+Success rename file: '00012_Bảy Đóa Sen Vàng Nâng Gót Ngọc 4.mp3' -> 'Bảy Đóa Sen Vàng Nâng Gót Ngọc 4.mp3'
+Action: 0 - Time: 2024-09-25 08-23-45
+Action: 7 - Time: 2024-09-25 08-23-45
+Success rename file: '00013_01 Hàng muôn hàng vạn.mp3' -> '00013_01 Hàng muôn hàng vạn001.mp3'
+Success rename file: '00014_02 Bụt là hình hài, Bụt là tâm thức.mp3' -> '00014_02 Bụt là hình hài, Bụt là tâm thức002.mp3'
+Success rename file: '00015_03 Tìm tâm.mp3' -> '00015_03 Tìm tâm003.mp3'
+Success rename file: '00016_04 Dòng sông tâm thức.mp3' -> '00016_04 Dòng sông tâm thức004.mp3'
+Success rename file: '00017_05 Tri giác và thực tại.mp3' -> '00017_05 Tri giác và thực tại005.mp3'
+Success rename file: '00018_06 Phép quán thứ nhất： Tầm tư danh.mp3' -> '00018_06 Phép quán thứ nhất： Tầm tư danh006.mp3'
+Success rename file: '00019_07 Cơ hội tự do.mp3' -> '00019_07 Cơ hội tự do007.mp3'
+Success rename file: '00020_08 Ý thức và tự do ý chí.mp3' -> '00020_08 Ý thức và tự do ý chí008.mp3'
+Success rename file: '00021_09 Tập khí hạnh phúc.mp3' -> '00021_09 Tập khí hạnh phúc009.mp3'
+Success rename file: '00022_10 Nhẫn nhục.mp3' -> '00022_10 Nhẫn nhục010.mp3'
+Success rename file: '00023_11 Đi bằng chân Bụt.mp3' -> '00023_11 Đi bằng chân Bụt011.mp3'
+Success rename file: '00024_12 Chân của Bụt.mp3' -> '00024_12 Chân của Bụt012.mp3'
+Success rename file: '00025_13 Những bài tập nuôi dưỡng thân Bụt và tâm Bụt.mp3' -> '00025_13 Những bài tập nuôi dưỡng thân Bụt và tâm Bụt013.mp3'
+Success rename file: '00026_14 Buông thư.mp3' -> '00026_14 Buông thư014.mp3'
+Action: 0 - Time: 2024-09-25 08-23-45
