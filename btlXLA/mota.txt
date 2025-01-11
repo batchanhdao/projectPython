@@ -1,0 +1,83 @@
+Phần 3 Mô tả và phân tích hệ thống
+3.1 Mô tả hệ thống
+Mục tiêu hệ thống: Xây dựng Ứng dụng sử dụng công nghệ xác thực và nhận dạng khuôn mặt để Chống giả mạo khuôn mặt, xác thực và nhận dạng người dùng.
+
+Các chức năng chính:
+1. Xác thực người dùng qua mắt và miệng: người dùng phải thực hiện các yêu cầu để xác thực
+2. Kiểm tra có người xác thực không và kiểm tra người xác thực hiện tại và lúc trước có là một không
+3. Khi xác thực thành công thì nhận diện người đó là ai
+
+Phần 4: Phương pháp - Công cụ và thư viện
+4.1 Phương pháp chống giả mạo khuôn mặt bằng cách xác thực người dùng bao gồm:
+Nhận diện nhiều đặc trưng khuôn mặt: Sử dụng các thuật toán nhận diện khuôn mặt hiện đại như OpenCV, Dlib để xác định các điểm mốc và đặc trưng trên khuôn mặt.
+
+Mã hóa và so sánh khuôn mặt: Chuyển đổi khuôn mặt thành các vectơ đặc trưng duy nhất thông qua quá trình mã hóa. So sánh vectơ đặc trưng này với dữ liệu đã được lưu trữ để kiểm tra sự tương đồng.
+
+Sử dụng học máy và mạng nơ-ron: Xây dựng mô hình học máy hoặc mạng nơ-ron để học cách phân biệt giữa khuôn mặt thật và giả mạo. Sử dụng dữ liệu đào tạo lớn để cải thiện độ chính xác của mô hình. Kiểm tra động đậy và các biểu hiện khuôn mặt:
+
+Theo dõi các biểu hiện như nhấp mắt, cười, hoặc quay đầu để xác định tính tự nhiên của hành vi.
+
+4.2 Công cụ và thư viện
+•	Python
+Python là một ngôn ngữ lập trình thông dịch, đa mục đích và dễ học. Nó được phát triển bởi Guido van Rossum và được ra mắt lần đầu vào năm 1991. Python đã trở thành một trong những ngôn ngữ lập trình phổ biến nhất trên thế giới và được sử dụng rộng rãi trong nhiều lĩnh vực khác nhau như phát triển web, khoa học dữ liệu, trí tuệ nhân tạo, tự động hóa, và nhiều hơn nữa.
+Một số đặc điểm chính của Python bao gồm:
+-	Cú pháp đơn giản và dễ đọc: Python sử dụng cú pháp gọn nhẹ và có cấu trúc rõ ràng, giúp lập trình viên dễ dàng đọc, viết và hiểu code.
+-	Hỗ trợ đa nền tảng: Python có thể chạy trên nhiều hệ điều hành như Windows, macOS, Linux, và cả trên thiết bị di động.
+-	Hỗ trợ thư viện phong phú: Python có một hệ thống thư viện phong phú và mạnh mẽ, bao gồm các thư viện tiêu chuẩn như NumPy, Pandas, Matplotlib cho phân tích dữ liệu và đồ họa, Django và Flask cho phát triển web, TensorFlow và PyTorch cho trí tuệ nhân tạo, và nhiều thư viện khác nữa.
+-	Cộng đồng lớn và hỗ trợ mạnh mẽ: Python có một cộng đồng lập trình viên rộng lớn, với nhiều tài liệu, tài nguyên và diễn đàn để hỗ trợ và chia sẻ kiến thức.
+-	Tính linh hoạt và mở rộng: Python cho phép lập trình viên xây dựng ứng dụng từ những dự án nhỏ đến những dự án lớn, và có khả năng tích hợp với các ngôn ngữ khác như C/C++ và Java.
+Python được sử dụng trong nhiều lĩnh vực, từ phát triển web, phân tích dữ liệu, trí tuệ nhân tạo, tự động hóa công việc, đến viết script và ứng dụng máy tính cá nhân. Tính đơn giản, dễ học và sức mạnh của Python đã đóng góp vào sự phổ biến và sự ưa chuộng của nó trong cộng đồng lập trình viên trên toàn thế giới.
+
+•	PyCharm Community Edition
+PyCharm là một môi trường phát triển tích hợp (IDE - Integrated Development Environment) dành cho lập trình viên Python. Nó được phát triển bởi JetBrains và cung cấp nhiều tính năng và công cụ hỗ trợ để làm việc hiệu quả với ngôn ngữ lập trình Python.
+PyCharm được thiết kế để cung cấp một môi trường phát triển đồng nhất và tiện ích cho việc phát triển phần mềm Python. Nó cung cấp một giao diện người dùng dễ sử dụng và tích hợp các tính năng quan trọng như gỡ lỗi, điều hướng mã nguồn, kiểm tra cú pháp, tự động hoàn thành mã, quản lý môi trường ảo và nhiều công cụ khác.
+Các tính năng chính của PyCharm bao gồm:
+-	Hỗ trợ đầy đủ cho ngôn ngữ Python, bao gồm Python 2.x và Python 3.x.
+-	Gỡ lỗi mạnh mẽ: PyCharm cung cấp gỡ lỗi trực quan và nhanh chóng để tìm ra và sửa các lỗi trong mã nguồn Python.
+-	Tự động hoàn thành mã: PyCharm tự động hoàn thành mã nguồn và đề xuất các phương pháp, biến, và cấu trúc câu lệnh phù hợp khi bạn viết code.
+-	Quản lý môi trường ảo: PyCharm cho phép bạn tạo và quản lý các môi trường ảo Python để cách ly các phiên bản và phụ thuộc của các gói thư viện.
+-	Hỗ trợ dự án và kiểm tra cú pháp: PyCharm cho phép bạn tổ chức mã nguồn vào các dự án và cung cấp các công cụ kiểm tra cú pháp để giúp bạn phát hiện lỗi cú pháp trong mã.
+-	Tích hợp với Git: PyCharm tích hợp tốt với hệ thống quản lý phiên bản Git, giúp bạn quản lý mã nguồn và thực hiện các hoạt động như commit, push, pull, và merge.
+PyCharm là một IDE mạnh mẽ và linh hoạt cho lập trình Python, giúp lập trình viên tăng cường hiệu suất và tiết kiệm thời gian trong quá trình phát triển phần mềm Python.
+
+•	Face-recognition
+Face-recognition là một thư viện mã nguồn mở trong Python, được sử dụng để nhận diện và nhận dạng khuôn mặt trong hình ảnh và video. Thư viện này cung cấp các công cụ và chức năng mạnh mẽ để xử lý và phân tích khuôn mặt, bao gồm:
+-	Nhận diện khuôn mặt: Face-recognition cho phép xác định vị trí và định vị các khuôn mặt trong hình ảnh. Bằng cách sử dụng các thuật toán phân loại, thư viện có thể xác định được vùng khuôn mặt và tọa độ của các điểm đặc trưng trên khuôn mặt như mắt, mũi, miệng, vv.
+-	Nhận dạng khuôn mặt: Face-recognition cung cấp các phương pháp nhận dạng khuôn mặt dựa trên việc so sánh các đặc trưng khuôn mặt. Bằng cách xây dựng và huấn luyện một bộ dữ liệu gồm các khuôn mặt đã biết trước, thư viện có thể so sánh và nhận dạng khuôn mặt mới dựa trên sự tương đồng về đặc trưng.
+-	Gắn nhãn và phân loại khuôn mặt: Face-recognition cho phép gắn nhãn và phân loại các khuôn mặt dựa trên tên hoặc nhãn tương ứng. Bằng cách gán nhãn cho các khuôn mặt và xây dựng một bộ dữ liệu huấn luyện, thư viện có thể phân loại khuôn mặt theo danh sách nhãn đã biết.
+Face-recognition sử dụng các thuật toán và mô hình học máy tiên tiến để thực hiện các tác vụ liên quan đến khuôn mặt. Thư viện này đã trở thành một công cụ phổ biến trong lĩnh vực nhận diện khuôn mặt, được sử dụng trong nhiều ứng dụng như xác thực người dùng, phân loại và nhận dạng khuôn mặt trong hình ảnh, video, các ứng dụng an ninh, vv.
+
+•	Opencv-contrib-python
+Opencv-contrib-python là một phiên bản mở rộng của thư viện OpenCV trong Python. OpenCV (Open Source Computer Vision Library) là một thư viện mã nguồn mở chuyên về xử lý hình ảnh và thị giác máy tính. Nó cung cấp một loạt các chức năng và công cụ cho việc xử lý, phân tích và trích xuất thông tin từ hình ảnh và video.
+Trong khi phiên bản chính của OpenCV (opencv-python) cung cấp các chức năng cơ bản như xử lý ảnh, phát hiện cạnh, phân tích màu sắc, opencv-contrib-python là một phiên bản mở rộng có chứa các tính năng bổ sung và mở rộng hơn.
+Opencv-contrib-python cung cấp một số chức năng mạnh mẽ bổ sung như:
+-	Phát hiện và nhận dạng khuôn mặt: Cung cấp các phương pháp và thuật toán để phát hiện khuôn mặt trong hình ảnh và video, và nhận dạng các đặc trưng khuôn mặt.
+-	Nhận dạng đối tượng: Bên cạnh nhận dạng khuôn mặt, opencv-contrib-python cung cấp cách để nhận dạng và phân loại các đối tượng khác như xe, con người, động vật, vv.
+-	Phân tích và trích xuất đặc trưng: Thư viện này cung cấp các công cụ để phân tích và trích xuất đặc trưng từ hình ảnh, bao gồm việc phát hiện biên, phát hiện vật thể, trích xuất điểm đặc trưng, vv.
+-	Xử lý và tiền xử lý hình ảnh: Cung cấp các phương pháp xử lý hình ảnh như làm mờ, lọc nhiễu, cân bằng histogram, biến đổi hình học, vv.
+Opencv-contrib-python là một công cụ quan trọng trong lĩnh vực thị giác máy tính và xử lý hình ảnh, được sử dụng rộng rãi trong nhiều ứng dụng như phân tích hình ảnh y tế, nhận dạng biển số xe, nhận dạng khuôn mặt, nhận dạng vật thể, vv.
+
+•	Dlib
+Dlib là một thư viện mã nguồn mở trong Python được sử dụng để xử lý ảnh và video.
+-	Nó cung cấp các công cụ và thuật toán mạnh mẽ để nhận diện khuôn mặt, nhận dạng đặc trưng, phát hiện đối tượng và xử lý hình ảnh.
+-	Dlib sử dụng các mô hình học máy để đào tạo và nhận diện các đối tượng trong hình ảnh, bao gồm cả khuôn mặt.
+-	Thư viện này có hiệu suất cao và được sử dụng rộng rãi trong các ứng dụng liên quan đến xử lý ảnh và nhận diện khuôn mặt.
+
+•	Cmake
+CMake là một công cụ xây dựng (build) mã nguồn mở, đa nền tảng.
+-	Nó giúp tự động hóa quá trình xây dựng phần mềm bằng cách tạo các tệp đặc tả xây dựng (build configuration) và hệ thống xây dựng (build system) phù hợp với nền tảng mục tiêu.
+-	CMake cho phép định nghĩa các tệp và thư viện nguồn cần thiết, sau đó tạo ra các tập tin xây dựng như Makefile, Visual Studio project hoặc Xcode project.
+-	Với CMake, việc xây dựng và triển khai mã nguồn trở nên dễ dàng và có thể thực hiện trên nhiều nền tảng khác nhau.
+
+•	Numpy
+NumPy (Numerical Python) là một thư viện Python mạnh mẽ cho tính toán khoa học và toán học số.
+-	Nó cung cấp các cấu trúc dữ liệu mảng nhiều chiều và hỗ trợ các phép toán số học trên mảng một cách hiệu quả.
+-	NumPy cho phép thực hiện các phép tính toán số học phức tạp và xử lý dữ liệu nhanh chóng, đồng thời cung cấp một loạt các chức năng để làm việc với mảng và ma trận.
+-	Thư viện này là một yếu tố quan trọng trong hệ sinh thái tính toán khoa học của Python và được sử dụng rộng rãi trong các lĩnh vực như khoa học dữ liệu, máy học, xử lý hình ảnh và nhiều lĩnh vực khác liên quan đến tính toán số.
+
+Phần 6: Tài liệu tham khảo
+-	OpenCV: https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html
+-	Face-recognition: https://pypi.org/project/face-recognition/
+-   Dlib: http://dlib.net/intro.html
+-   Phương pháp phát hiện chớp mắt: https://vision.fe.uni-lj.si/cvww2016/proceedings/papers/05.pdf
+-   Phương pháp phát hiện đóng mở miệng: https://www.researchgate.net/publication/224194502_Mouth_open_or_closed_decision_for_frontal_face_images_with_given_eye_locations
