@@ -2,18 +2,23 @@ from yt_dlp import YoutubeDL
 import os
 import json
 
-# Thiết lập thư mục làm việc
-working_directory = os.getcwd()
-print(working_directory)
-# os.chdir(working_directory)
-def path():
-    folder = 'app_python'
-    folder_path = os.path.join(working_directory, folder)
-    os.chdir(folder_path)
-    print(working_directory)
+x = 1955
+th = 12
+print(x%th)
+# 1958: 2 -> +9/-3, 
 
-path()
-print(working_directory)
+# Thiết lập thư mục làm việc
+# working_directory = os.getcwd()
+# print(working_directory)
+# # os.chdir(working_directory)
+# def path():
+#     folder = 'app_python'
+#     folder_path = os.path.join(working_directory, folder)
+#     os.chdir(folder_path)
+#     print(working_directory)
+
+# path()
+# print(working_directory)
     
 # URLS = ['https://www.youtube.com/watch?v=iB7f5JUZD_w']
 # with YoutubeDL() as ydl:
